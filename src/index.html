@@ -6,37 +6,39 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="main.js" type="module"></script>
 </head>
-<body class="outer-container">
+<body>
 <header>
-    <nav>
-        <h1>The Clueless Cook</h1>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Calculator</li>
-        </ul>
-    </nav>
-    <div>
-        <section>
-            <h1>Delicious Recipes.</h1>
-            <h1>Daily Updated.</h1>
-            <button type="button"><a>Find Recipes</a></button>
-        </section>
+        <nav class="navigator ">
+            <h1 class="">The Clueless Cook</h1>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Calculator</li>
+            </ul>
+        </nav>
+    <div class="backgroundImg" id="headerContainer">
+            <section class="header-text">
+                <h1>Delicious Recipes.</h1>
+                <h2>Daily Updated.</h2>
+                <button class="button" type="button"><a>Find Recipes</a></button>
+            </section>
+        <div>
+<!--        <section>-->
+<!--            <article>-->
+<!--                <p>card 1</p>-->
+<!--            </article>-->
+<!--            <article>-->
+<!--                <p>card 2</p>-->
+<!--            </article>-->
+<!--            <article>-->
+<!--                <p>card 3</p>-->
+<!--            </article>-->
+<!--        </section>-->
+        </div>
     </div>
-    <section>
-        <article>
-            <p>card 1</p>
-        </article>
-        <article>
-            <p>card 2</p>
-        </article>
-        <article>
-            <p>card 3</p>
-        </article>
-    </section>
 </header>
-<main>
-    <form>
+<main class="">
+    <form class="searchbar flex-container-row cont-center">
         <input type="search" name="RecipeSearch" id="RecipeSearch" placeholder="Recipe search">
         <select id="mealType">
             <option value="">Meal Type</option>
@@ -54,14 +56,14 @@
             <option value="">Time</option>
             <option value="dinner">dinner</option>
         </select>
-        <button id="searchRecipe" type="submit">Search</button>
+        <button class="button" id="searchRecipe" type="submit">Search</button>
     </form>
     <section>
         <article>
         </article>
     </section>
 </main>
-<footer>
+<footer class="">
 
 </footer>
 </body>
