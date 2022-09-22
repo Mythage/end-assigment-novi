@@ -1,0 +1,28 @@
+{
+  "name": "end-assigment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mythage/end-assigment-novi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mythage/end-assigment-novi/issues"
+  },
+  "homepage": "https://github.com/Mythage/end-assigment-novi#readme",
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "parcel": "^2.7.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
