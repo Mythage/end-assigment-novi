@@ -73,7 +73,13 @@
     justify-content: space-around;
     align-items: center;
 }
+.header-box {
+    border: 2px solid red;
+    margin-left: 25%;
+    position: relative;
+    top: 30%;
 
+}
 /* ------------------------------- 4.2 Main -------------------------------- */
 
 .searchbar {

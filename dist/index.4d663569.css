@@ -54,6 +54,13 @@
   display: flex;
 }
 
+.header-box {
+  border: 2px solid red;
+  margin-left: 25%;
+  position: relative;
+  top: 30%;
+}
+
 .searchbar {
   background: #283e53;
   gap: 1em;
