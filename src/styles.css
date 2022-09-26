@@ -7,6 +7,7 @@
         3.2 Other
     4. Areas
         4.1 Header
+        4.1.2  Header Recipe cards
         4.2 Main
 
 
@@ -18,38 +19,32 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    outline: 1px solid grey;
+    /*outline: 1px solid grey;*/
 }
 header {
    height: 100vh
 }
 /* ------------------------------- 2. Typography -------------------------------- */
 .header-text {
+    padding-top: 180px;
     color: white;
-    font-size: 30px;
+    font-size: 50px;
+    gap: 5px;
 }
 
 /* ------------------------------- 3.1 Reusables -------------------------------- */
 
-.flex-container-row {
-    display: flex;
-    flex-direction: row;
-}
-
-.flex-container-collum{
-    display: flex;
-    flex-direction: column;
-}
 .button {
     border-radius: 5px;
     border: 1px solid black;
     background: #70b6be;
     width: 100px;
     box-shadow: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
-
 .outer-container {
-    outline:  2px  solid black;
+    /*outline:  2px  solid black;*/
     display: flex;
     max-width: 99%;
     margin: 0 auto;
@@ -58,7 +53,7 @@ header {
 
 }
 .inner-container {
-    outline: 2px solid red;
+    /*outline: 2px solid red;*/
     display: flex;
     flex-direction: column;
     max-width: 1248px;
@@ -71,6 +66,12 @@ header {
     flex-basis: 100%;
 }
 
+.placeholder-card {
+    background-color: #70b6be;
+    width: auto;
+    height: auto;
+
+}
 /* ------------------------------- 4.1 Header -------------------------------- */
 
 .backgroundImg{
@@ -87,13 +88,42 @@ header {
     height: 10vh;
     /*padding: 10px 200px 25px 200px;*/
 }
-
 .navigator ul{
     flex: 0 1 250px;
     display: flex;
     list-style: none;
     justify-content: space-around;
     align-items: center;
+}
+
+/* ------------------------------- 4.1.2 Header recipe cards -------------------- */
+
+.recepicards {
+box-shadow: 0 5px 35px black ;
+    border-radius: 10px;
+    margin: 1em;
+}
+.card-two {
+    position: absolute;
+    z-index: 2;
+    align-self: center;
+    width: 25vw;
+    height: 30vh;
+
+}
+.card-one {
+    position: absolute;
+    z-index: 1;
+    align-self: flex-start;
+    width: 20vw;
+    height: 25vh;
+}
+.card-three {
+    position: absolute;
+    z-index: 1;
+    align-self: flex-end;
+    width: 20vw;
+    height: 25vh;
 }
 /* ------------------------------- 4.2 Main -------------------------------- */
 

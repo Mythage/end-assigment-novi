@@ -1,4 +1,4 @@
-4369
+4371
 58C:\Users\sonij\WebstormProjects\end-assigment\package.json133083066260702415 0
 110C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@jridgewell\gen-mapping\dist\gen-mapping.umd.js.map133083057253338014 0
 90C:\Users\sonij\WebstormProjects\end-assigment\node_modules\caniuse-lite\data\regions\WF.js133083057263494643 0
@@ -6,7 +6,7 @@
 81C:\Users\sonij\WebstormProjects\end-assigment\node_modules\css-tree\lib\generator133083057258759630 1
 109C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@parcel\runtime-js\src\helpers\worker\js-loader.js133083057255869850 0
 68C:\Users\sonij\WebstormProjects\end-assigment\node_modules\path-type133083057253036727 1
-50C:\Users\sonij\WebstormProjects\end-assigment\dist133086637214846974 1
+50C:\Users\sonij\WebstormProjects\end-assigment\dist133086670769034201 1
 89C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@parcel\utils\src\sourcemap.js133083057257726431 0
 89C:\Users\sonij\WebstormProjects\end-assigment\node_modules\type-fest\ts41\kebab-case.d.ts133083057255197079 0
 76C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@msgpackr-extract133083066260366769 1
@@ -28,10 +28,10 @@
 79C:\Users\sonij\WebstormProjects\end-assigment\node_modules\escape-string-regexp133083057252701524 1
 89C:\Users\sonij\WebstormProjects\end-assigment\node_modules\nth-check\lib\esm\compile.d.ts133083057255422369 0
 62C:\Users\sonij\WebstormProjects\end-assigment\.idea\.gitignore133083051498040927 0
-51C:\Users\sonij\WebstormProjects\end-assigment\.idea133086634137803623 1
+51C:\Users\sonij\WebstormProjects\end-assigment\.idea133086670340542422 1
 70C:\Users\sonij\WebstormProjects\end-assigment\node_modules\buffer-from133083057252701524 1
 88C:\Users\sonij\WebstormProjects\end-assigment\node_modules\csso\lib\clean\Declaration.js133083057255929691 0
-60C:\Users\sonij\WebstormProjects\end-assigment\src\styles.css133086637214057349 0
+60C:\Users\sonij\WebstormProjects\end-assigment\src\styles.css133086670768198183 0
 52C:\Users\sonij\WebstormProjects\end-assigment\assets133083117852390734 1
 81C:\Users\sonij\WebstormProjects\end-assigment\node_modules\json5\lib\unicode.d.ts133083057255306778 0
 78C:\Users\sonij\WebstormProjects\end-assigment\node_modules\terser\CHANGELOG.md133083057257535755 0
@@ -52,12 +52,12 @@
 83C:\Users\sonij\WebstormProjects\end-assigment\node_modules\csso\lib\clean\Atrule.js133083057254185657 0
 80C:\Users\sonij\WebstormProjects\end-assigment\node_modules\color-convert\LICENSE133083057253168485 0
 76C:\Users\sonij\WebstormProjects\end-assigment\node_modules\lmdb\src\misc.cpp133083057258254073 0
-49C:\Users\sonij\WebstormProjects\end-assigment\src133086637214057349 1
+49C:\Users\sonij\WebstormProjects\end-assigment\src133086670768198183 1
 76C:\Users\sonij\WebstormProjects\end-assigment\node_modules\boolbase\index.js133083057252538169 0
 108C:\Users\sonij\WebstormProjects\end-assigment\node_modules\msgpackr-extract\src\.vs\src\v16\Browse.VC.db-wal133083057254396040 0
 91C:\Users\sonij\WebstormProjects\end-assigment\node_modules\nth-check\lib\esm\index.d.ts.map133083057254565582 0
 73C:\Users\sonij\WebstormProjects\end-assigment\node_modules\css-select\lib133083057256365252 1
-60C:\Users\sonij\WebstormProjects\end-assigment\src\index.html133086637213917024 0
+60C:\Users\sonij\WebstormProjects\end-assigment\src\index.html133086667742041480 0
 82C:\Users\sonij\WebstormProjects\end-assigment\node_modules\csso\lib\replace\Url.js133083057256742714 0
 133C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\@scope\pkg\foo\bar.js133083057253517533 0
 80C:\Users\sonij\WebstormProjects\end-assigment\node_modules\yaml\browser\types.js133083057256674421 0
@@ -955,7 +955,7 @@
 86C:\Users\sonij\WebstormProjects\end-assigment\node_modules\type-fest\source\entry.d.ts133083057254595502 0
 90C:\Users\sonij\WebstormProjects\end-assigment\node_modules\caniuse-lite\data\regions\KG.js133083057261618686 0
 76C:\Users\sonij\WebstormProjects\end-assigment\node_modules\semver\bin\semver133083057252368628 0
-72C:\Users\sonij\WebstormProjects\end-assigment\dist\index.4d6bcbeb.js.map133086591885414914 0
+72C:\Users\sonij\WebstormProjects\end-assigment\dist\index.4d6bcbeb.js.map133086655086711823 0
 80C:\Users\sonij\WebstormProjects\end-assigment\node_modules\terser\bin\terser.mjs133083057257676560 0
 103C:\Users\sonij\WebstormProjects\end-assigment\node_modules\terser\lib\compress\drop-side-effect-free.js133083057255979557 0
 95C:\Users\sonij\WebstormProjects\end-assigment\node_modules\csso\lib\replace\atrule\keyframes.js133083057256405142 0
@@ -2169,6 +2169,7 @@
 90C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@parcel\plugin\lib\PluginAPI.js133083057252368628 0
 80C:\Users\sonij\WebstormProjects\end-assigment\node_modules\has-flag\package.json133083057251899870 0
 73C:\Users\sonij\WebstormProjects\end-assigment\node_modules\dotenv\LICENSE133083057252806389 0
+80C:\Users\sonij\WebstormProjects\end-assigment\dist\placeholder card.0c25d436.png133086655086389782 0
 75C:\Users\sonij\WebstormProjects\end-assigment\node_modules\globals\index.js133083057252228982 0
 85C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@parcel\optimizer-svgo\lib133083057252278866 1
 116C:\Users\sonij\WebstormProjects\end-assigment\node_modules\dom-serializer\node_modules\entities\lib\maps\legacy.json133083057253976217 0
@@ -2830,7 +2831,7 @@
 92C:\Users\sonij\WebstormProjects\end-assigment\node_modules\axios\lib\core\dispatchRequest.js133083058528324207 0
 90C:\Users\sonij\WebstormProjects\end-assigment\node_modules\caniuse-lite\data\regions\LK.js133083057261777217 0
 90C:\Users\sonij\WebstormProjects\end-assigment\node_modules\caniuse-lite\data\regions\LS.js133083057261807138 0
-73C:\Users\sonij\WebstormProjects\end-assigment\dist\index.4d663569.css.map133086637214846974 0
+73C:\Users\sonij\WebstormProjects\end-assigment\dist\index.4d663569.css.map133086670769024174 0
 90C:\Users\sonij\WebstormProjects\end-assigment\node_modules\caniuse-lite\data\regions\MD.js133083057261867904 0
 90C:\Users\sonij\WebstormProjects\end-assigment\node_modules\caniuse-lite\data\regions\ME.js133083057261907798 0
 78C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@parcel\events\test133083057254485801 1
@@ -2962,7 +2963,7 @@
 124C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@parcel\package-manager\test\fixtures\packages\peers-2.0\index.js133083057255047467 0
 109C:\Users\sonij\WebstormProjects\end-assigment\node_modules\caniuse-lite\data\features\css-at-counter-style.js133083057259054191 0
 107C:\Users\sonij\WebstormProjects\end-assigment\node_modules\caniuse-lite\data\features\css-cascade-layers.js133083057259260742 0
-59C:\Users\sonij\WebstormProjects\end-assigment\assets\images132979493593929085 1
+59C:\Users\sonij\WebstormProjects\end-assigment\assets\images133086640642211357 1
 102C:\Users\sonij\WebstormProjects\end-assigment\node_modules\caniuse-lite\data\features\css-clip-path.js133083057259280691 0
 105C:\Users\sonij\WebstormProjects\end-assigment\node_modules\caniuse-lite\data\features\css-color-adjust.js133083057259300639 0
 104C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@parcel\transformer-postcss\lib\loadConfig.js133083057252932897 0
@@ -3574,7 +3575,7 @@
 82C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@parcel\core\lib\public133083057259330555 1
 106C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@swc\helpers\lib\_initializer_warning_helper.js133083057256747841 0
 103C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@swc\helpers\lib\_interop_require_default.js133083057256877519 0
-74C:\Users\sonij\WebstormProjects\end-assigment\dist\hero-image.216d56a7.jpg133086591885454888 0
+74C:\Users\sonij\WebstormProjects\end-assigment\dist\hero-image.216d56a7.jpg133086655086309778 0
 107C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@swc\helpers\lib\_is_native_reflect_construct.js133083057257057040 0
 111C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@parcel\package-manager\test\fixtures\packages\peers133083057256827651 1
 97C:\Users\sonij\WebstormProjects\end-assigment\node_modules\@swc\helpers\lib\_iterable_to_array.js133083057257226587 0
@@ -4337,11 +4338,12 @@
 68C:\Users\sonij\WebstormProjects\end-assigment\node_modules\.bin\svgo133083057263745108 0
 72C:\Users\sonij\WebstormProjects\end-assigment\node_modules\.bin\svgo.cmd133083057263745108 0
 70C:\Users\sonij\WebstormProjects\end-assigment\node_modules\.bin\terser133083057263745108 0
-69C:\Users\sonij\WebstormProjects\end-assigment\dist\index.4d663569.css133086637214836978 0
-68C:\Users\sonij\WebstormProjects\end-assigment\dist\index.4d6bcbeb.js133086591885384786 0
-61C:\Users\sonij\WebstormProjects\end-assigment\dist\index.html133086637214817077 0
+69C:\Users\sonij\WebstormProjects\end-assigment\dist\index.4d663569.css133086670769014166 0
+68C:\Users\sonij\WebstormProjects\end-assigment\dist\index.4d6bcbeb.js133086655086681878 0
+61C:\Users\sonij\WebstormProjects\end-assigment\dist\index.html133086667742932300 0
 58C:\Users\sonij\WebstormProjects\end-assigment\assets\fonts132979493016261889 1
 74C:\Users\sonij\WebstormProjects\end-assigment\assets\images\hero-image.jpg132979485825502568 0
+80C:\Users\sonij\WebstormProjects\end-assigment\assets\images\placeholder card.png133086640331362980 0
 71C:\Users\sonij\WebstormProjects\end-assigment\assets\icons\facebook.png132979490697568027 0
 71C:\Users\sonij\WebstormProjects\end-assigment\assets\icons\facebook.svg132979486256963868 0
 72C:\Users\sonij\WebstormProjects\end-assigment\assets\icons\instagram.png132979490578203024 0
@@ -4367,4 +4369,4 @@
 78C:\Users\sonij\WebstormProjects\end-assigment\assets\fonts\Austein\Austein.ttf132979492656721904 0
 80C:\Users\sonij\WebstormProjects\end-assigment\assets\fonts\Austein\Austein.woff2132979492656941911 0
 63C:\Users\sonij\WebstormProjects\end-assigment\.idea\modules.xml133083051496891771 0
-65C:\Users\sonij\WebstormProjects\end-assigment\.idea\workspace.xml133086634137793602 0
+65C:\Users\sonij\WebstormProjects\end-assigment\.idea\workspace.xml133086670340532409 0

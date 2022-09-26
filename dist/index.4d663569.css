@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  outline: 1px solid gray;
   margin: 0;
   padding: 0;
 }
@@ -11,17 +10,9 @@ header {
 
 .header-text {
   color: #fff;
-  font-size: 30px;
-}
-
-.flex-container-row {
-  flex-direction: row;
-  display: flex;
-}
-
-.flex-container-collum {
-  flex-direction: column;
-  display: flex;
+  gap: 5px;
+  padding-top: 180px;
+  font-size: 50px;
 }
 
 .button {
@@ -30,11 +21,12 @@ header {
   background: #70b6be;
   border: 1px solid #000;
   border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .outer-container {
   max-width: 99%;
-  outline: 2px solid #000;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
@@ -43,7 +35,6 @@ header {
 
 .inner-container {
   max-width: 1248px;
-  outline: 2px solid red;
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 1;
@@ -54,6 +45,12 @@ header {
 
 .full-width {
   flex-basis: 100%;
+}
+
+.placeholder-card {
+  width: auto;
+  height: auto;
+  background-color: #70b6be;
 }
 
 .backgroundImg {
@@ -77,6 +74,36 @@ header {
   align-items: center;
   list-style: none;
   display: flex;
+}
+
+.recepicards {
+  border-radius: 10px;
+  margin: 1em;
+  box-shadow: 0 5px 35px #000;
+}
+
+.card-two {
+  z-index: 2;
+  width: 25vw;
+  height: 30vh;
+  align-self: center;
+  position: absolute;
+}
+
+.card-one {
+  z-index: 1;
+  width: 20vw;
+  height: 25vh;
+  align-self: flex-start;
+  position: absolute;
+}
+
+.card-three {
+  z-index: 1;
+  width: 20vw;
+  height: 25vh;
+  align-self: flex-end;
+  position: absolute;
 }
 
 .searchbar {
