@@ -23,41 +23,46 @@
                 <h2>Daily Updated.</h2>
                 <button class="button" type="button"><a>Find Recipes</a></button>
             </section>
-                <section class="inner-container">
-                    <article class="recepicards card-one placeholder-card">
-                        <p class="" > 1</p>
-                    </article>
-                    <article class="recepicards card-two placeholder-card">
-                        <p class="" >2 </p>
-                    </article>
-                    <article class="recepicards card-three placeholder-card">
-                        <p class="" >3</p>
-                    </article>
-                </section>
+            <section class="container-cards">
+                <article class="card recepicards ">
+                    <p class=""> 1</p>
+                </article>
+                <article class="card recepicards ">
+                    <p class="">2 </p>
+                </article>
+                <article class="card recepicards ">
+                    <p class="">3</p>
+                </article>
+            </section>
         </div>
     </div>
 </header>
-<main class="">
-    <form class="searchbar flex-container-row cont-center">
-        <input type="search" name="RecipeSearch" id="RecipeSearch" placeholder="Recipe search">
-        <select id="mealType">
-            <option value="">Meal Type</option>
-            <option value="dinner">dinner</option>
-        </select>
-        <select id="cuisine">
-            <option value="">Cuisine</option>
-            <option value="dinner">dinner</option>
-        </select>
-        <select id="diat">
-            <option value="">Diet</option>
-            <option value="dinner">dinner</option>
-        </select>
-        <select id="time">
-            <option value="">Time</option>
-            <option value="dinner">dinner</option>
-        </select>
-        <button class="button" id="searchRecipe" type="submit">Search</button>
+<main class="outer-container">
+    <div class="full-width searchbar">
+    <form class="inner-container">
+        <div>
+            <input type="search" name="RecipeSearch" id="RecipeSearch" placeholder="Recipe search">
+            <select id="mealType">
+                <option value="">Meal Type</option>
+                <option value="dinner">dinner</option>
+            </select>
+            <select id="cuisine">
+                <option value="">Cuisine</option>
+                <option value="dinner">dinner</option>
+            </select>
+            <select id="diat">
+                <option value="">Diet</option>
+                <option value="dinner">dinner</option>
+            </select>
+            <select id="time">
+                <option value="">Time</option>
+                <option value="dinner">dinner</option>
+            </select>
+            <button class="button" id="searchRecipe" type="submit">Search</button>
+        </div>
+
     </form>
+    </div>
     <section>
         <article>
         </article>
