@@ -28,6 +28,8 @@ header {
 :root {
     --container-height: 200px;
     --container-width: 300px;
+    --Button: #70b6be;
+    --background-drk-blue: #283e53;
 }
 /* ------------------------------- 2. Typography -------------------------------- */
 
@@ -37,7 +39,7 @@ header {
 .button {
     border-radius: 5px;
     border: 1px solid black;
-    background: #70b6be;
+    background: var(--Button);
     width: 100px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -47,13 +49,15 @@ header {
     display: flex;
     max-width: 100%;
     flex-wrap: wrap;
+    flex-grow: 0;
+    flex-shrink: 1;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
 
 }
 .inner-container {
-    outline: 2px solid red;
+    /*outline: 2px solid red;*/
     display: flex;
     flex-direction: column;
     max-width: 1248px;
@@ -105,8 +109,8 @@ header {
     position: relative;
     top: 250px;
 }
-.recepicards {
-    background-color: #70b6be;
+.recipe-cards {
+    background-color: var(--Button);
     box-shadow: 0 5px 35px black ;
     border-radius: 10px;
     margin: 1em;
@@ -131,15 +135,42 @@ header {
 }
 /* ------------------------------- 4.2 Main -------------------------------- */
 
-.searchbar {
-    background: #283e53;
+.searchbar-nav {
+    background: var(--background-drk-blue);
     padding: 1em;
-    gap: 1em;
+}
+.searchbar {
     display: flex;
-    flex-direction: row;
+    gap: 5em;
+    align-self: center;
 }
 .searchbar input, select {
     border-radius: 5px;
     border: 1px solid grey;
+    padding: 5px 30px 5px 30px;
+    text-align: center;
+}
+
+/* ------------------------------- 4.3 Footer -------------------------------- */
+
+.footerStyling {
+    background: var(--background-drk-blue);
+    color: var(--Button);
+}
+.container-footer{
+    /*outline: 1px solid red;*/
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1248px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    justify-content: space-evenly;
+}
+.icons-design img{
     padding: 5px;
+    background: var(--Button);
+    border-radius: 15px;
+    margin: 10px;
 }

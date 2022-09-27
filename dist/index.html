@@ -24,13 +24,13 @@
                 <button class="button" type="button"><a>Find Recipes</a></button>
             </section>
             <section class="container-cards">
-                <article class="card recepicards ">
+                <article class="card recipe-cards ">
                     <p class=""> 1</p>
                 </article>
-                <article class="card recepicards ">
+                <article class="card recipe-cards ">
                     <p class="">2 </p>
                 </article>
-                <article class="card recepicards ">
+                <article class="card recipe-cards ">
                     <p class="">3</p>
                 </article>
             </section>
@@ -38,38 +38,66 @@
     </div>
 </header>
 <main class="outer-container">
-    <div class="full-width searchbar">
-    <form class="inner-container">
-        <div>
-            <input type="search" name="RecipeSearch" id="RecipeSearch" placeholder="Recipe search">
-            <select id="mealType">
-                <option value="">Meal Type</option>
-                <option value="dinner">dinner</option>
-            </select>
-            <select id="cuisine">
-                <option value="">Cuisine</option>
-                <option value="dinner">dinner</option>
-            </select>
-            <select id="diat">
-                <option value="">Diet</option>
-                <option value="dinner">dinner</option>
-            </select>
-            <select id="time">
-                <option value="">Time</option>
-                <option value="dinner">dinner</option>
-            </select>
-            <button class="button" id="searchRecipe" type="submit">Search</button>
-        </div>
-
-    </form>
+    <div class="full-width searchbar-nav">
+        <form class="inner-container">
+            <div class="searchbar">
+                <input type="search" name="RecipeSearch" id="RecipeSearch" placeholder="Recipe search">
+                <select id="mealType">
+                    <option value="">Meal Type</option>
+                    <option value="dinner">dinner</option>
+                </select>
+                <select id="cuisine">
+                    <option value="">Cuisine</option>
+                    <option value="dinner">dinner</option>
+                </select>
+                <select id="diet">
+                    <option value="">Diet</option>
+                    <option value="dinner">dinner</option>
+                </select>
+                <select id="time">
+                    <option value="">Time</option>
+                    <option value="dinner">dinner</option>
+                </select>
+                <button class="button" id="searchRecipe" type="submit">Search</button>
+            </div>
+        </form>
     </div>
     <section>
         <article>
         </article>
     </section>
 </main>
-<footer class="">
-
+<footer class="outer-container footerStyling ">
+    <article class="container-footer full-width ">
+        <section>
+            <h3>Information</h3>
+            <p>Lorem ipsum dolor.</p>
+            <p>Lorem ipsum dolor.</p>
+            <p>Lorem ipsum dolor.</p>
+            <p>Lorem ipsum dolor.</p>
+        </section>
+        <section>
+            <h3>About</h3>
+            <p>Lorem ipsum dolor.</p>
+            <p>Lorem ipsum dolor.</p>
+            <p>Lorem ipsum dolor.</p>
+        </section>
+        <section>
+            <h3>Contact</h3>
+            <p>Lorem ipsum dolor.</p>
+            <p>Lorem ipsum dolor.</p>
+            <p>Lorem ipsum dolor.</p>
+        </section>
+        <section class="">
+            <h3>Social</h3>
+            <div class="icons-design">
+                <img src="/facebook.2375d277.svg" alt="Facebook Icon">
+                <img src="/instagram.f1af0e3e.svg" alt="Instagram Icon">
+                <img src="/linkedin.8cc5e502.svg" alt="Linkedin Icon">
+                <img src="/twitter.a9871910.svg" alt="Twitter Icon">
+            </div>
+        </section>
+    </article>
 </footer>
 </body>
 </html>
