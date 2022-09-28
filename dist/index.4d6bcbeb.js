@@ -535,11 +535,42 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-console.log("ik werk");
-// Fetching data from Edaman API
-async function fetchRecipeData() {}
+var _createRecipeCard = require("./funtions/createRecipeCard");
+var _createRecipeCardDefault = parcelHelpers.interopDefault(_createRecipeCard);
+// Try Fetching data from Edaman API
+async function fetchRecipeData(searchQuery) {
+    //Declaration of input values for API
+    const URI = "https://api.edamam.com";
+    const ENDPOINT = "/api/recipes/v2";
+    const API_KEY = "d9ee381f552a7f704393ade7c82cffc0";
+    const API_ID = "305c6b1f";
+    // if succesfull then ...
+    try {
+        //fetch data from API
+        const response = await (0, _axiosDefault.default).get(URI + ENDPOINT, {
+            params: {
+                type: "public",
+                app_id: API_ID,
+                app_key: API_KEY,
+                q: searchQuery
+            }
+        });
+        // Store recepi key in variable
+        const arrayOfRecipes = response.data.hits;
+        // console.log(arrayOfRecipes);
+        (0, _createRecipeCardDefault.default)(arrayOfRecipes);
+    // Catch error massage and show them in the UI
+    } catch (e) {
+        const error = document.getElementById("error-message");
+        if (e.response.status === 404) //Execute page not found massage
+        error.innerContent = "page not found";
+        else if (e.response.status === 500) //Execute internal server error massage
+        error.innerContent = "internal server error";
+    }
+}
+fetchRecipeData("pasta");
 
-},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
+},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./funtions/createRecipeCard":"aUuo7"}],"jo6P5":[function(require,module,exports) {
 module.exports = require("./lib/axios");
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -3924,6 +3955,19 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["8TtF2","gLLPy"], "gLLPy", "parcelRequire457f")
+},{}],"aUuo7":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function createRecipeCard(arr) {
+    const recipeList = document.getElementById("recipe-card-list");
+    arr.map((item)=>{
+        recipeList.innerHTML += `
+            <li> ${item.recipe.label}</li>
+        `;
+    });
+}
+exports.default = createRecipeCard;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["8TtF2","gLLPy"], "gLLPy", "parcelRequire457f")
 
 //# sourceMappingURL=index.4d6bcbeb.js.map
