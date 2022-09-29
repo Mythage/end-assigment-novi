@@ -1,6 +1,5 @@
 import axios from "axios";
 import createRecipeCard from "./createRecipeCard";
-import createRecipeCardV2 from "./createRecipeCardV2";
 
 // Try Fetching data from Edaman API
 export default async function fetchRecipeData(searchQuery, mealType, cuisineType, diet, time) {
@@ -31,8 +30,7 @@ export default async function fetchRecipeData(searchQuery, mealType, cuisineType
         const arrayOfRecipes = response.data.hits
         // console.log(arrayOfRecipes);
 
-        // createRecipeCard( arrayOfRecipes );
-        createRecipeCardV2( arrayOfRecipes);
+        createRecipeCard( arrayOfRecipes);
 
         // Catch error massage and show them in the UI
     } catch (e) {
