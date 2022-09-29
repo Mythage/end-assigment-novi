@@ -9,7 +9,7 @@ header {
 }
 
 :root {
-  --container-height: 200px;
+  --container-height: 225px;
   --container-width: 300px;
   --container-img-height: 150px;
   --Button: #70b6be;
@@ -119,10 +119,9 @@ header {
 }
 
 .searchbar input, select {
-  text-align: center;
   border: 1px solid gray;
   border-radius: 5px;
-  padding: 5px 30px;
+  padding: 5px 5px 5px 30px;
 }
 
 .footerStyling {
@@ -161,11 +160,29 @@ header {
 }
 
 .card--img {
-  object-fit: fill;
+  object-fit: cover;
   height: var(--container-img-height);
   width: var(--container-width);
   border-bottom: 1px solid gray;
   border-radius: 10px 10px 0 0;
+}
+
+.card--ulStyle {
+  flex-flow: wrap;
+  flex: 0 100%;
+  justify-content: center;
+  gap: 5em;
+  display: flex;
+}
+
+.card--label {
+  padding: 10px;
+}
+
+.card--time {
+  background-image: url("time.350d0404.svg");
+  background-repeat: no-repeat;
+  padding-left: 2em;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */

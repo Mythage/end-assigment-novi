@@ -26,7 +26,7 @@ header {
 }
 
 :root {
-    --container-height: 200px;
+    --container-height: 225px;
     --container-width: 300px;
     --container-img-height: 150px;
     --Button: #70b6be;
@@ -137,8 +137,7 @@ header {
 .searchbar input, select {
     border-radius: 5px;
     border: 1px solid grey;
-    padding: 5px 30px 5px 30px;
-    text-align: center;
+    padding: 5px 5px 5px 30px;
 }
 
 /* ------------------------------- 4.3 Footer -------------------------------- */
@@ -174,7 +173,6 @@ header {
 .card__main {
     height: var(--container-height);
     width: var(--container-width);
-
 }
 .card--style {
     list-style: none;
@@ -183,9 +181,25 @@ header {
     margin: 1em;
 }
 .card--img {
-    object-fit: fill;
+    object-fit: cover;
     border-radius: 10px 10px 0 0;
     border-bottom: 1px solid gray;
     height: var(--container-img-height) ;
     width: var(--container-width);
+}
+.card--ulStyle {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+    justify-content: center;
+    flex: 0 1 100%;
+}
+.card--label {
+    padding: 10px;
+}
+.card--time {
+    padding-left: 2em;
+    background-image: url("/assets/icons/time.svg");
+    background-repeat: no-repeat;
 }
