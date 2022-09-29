@@ -533,12 +533,65 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"gLLPy":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+//Import from all created functions
+var _fetchRecipeData = require("./funtions/fetchRecipeData");
+var _fetchRecipeDataDefault = parcelHelpers.interopDefault(_fetchRecipeData);
+// Reference to form submit
+const submitForm = document.getElementById("onSubmit");
+// Reference to input fields
+const ingredients = document.getElementById("ingredients-field");
+const mealType = document.getElementById("meal-type-field");
+const cuisineType = document.getElementById("cuisine-type");
+const dietType = document.getElementById("diet-type");
+const time = document.getElementById("time");
+// send form with data
+submitForm.addEventListener("submit", (e)=>{
+    // Prevent form to auto submit
+    e.preventDefault();
+    // Execute function to fetch data and parse out values as argument
+    (0, _fetchRecipeDataDefault.default)(ingredients.value, mealType.value, cuisineType.value, dietType.value, time.value);
+});
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./funtions/fetchRecipeData":"cUiFb"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"cUiFb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _createRecipeCard = require("./funtions/createRecipeCard");
+var _createRecipeCard = require("./createRecipeCard");
 var _createRecipeCardDefault = parcelHelpers.interopDefault(_createRecipeCard);
-// Try Fetching data from Edaman API
-async function fetchRecipeData(searchQuery) {
+var _createRecipeCardV2 = require("./createRecipeCardV2");
+var _createRecipeCardV2Default = parcelHelpers.interopDefault(_createRecipeCardV2);
+async function fetchRecipeData(searchQuery, mealType, cuisineType, diet, time) {
     //Declaration of input values for API
     const URI = "https://api.edamam.com";
     const ENDPOINT = "/api/recipes/v2";
@@ -552,13 +605,19 @@ async function fetchRecipeData(searchQuery) {
                 type: "public",
                 app_id: API_ID,
                 app_key: API_KEY,
-                q: searchQuery
+                q: searchQuery,
+                mealType: mealType,
+                cuisineType: cuisineType,
+                diet: diet,
+                time: time
             }
         });
+        console.log(response);
         // Store recepi key in variable
         const arrayOfRecipes = response.data.hits;
         // console.log(arrayOfRecipes);
-        (0, _createRecipeCardDefault.default)(arrayOfRecipes);
+        // createRecipeCard( arrayOfRecipes );
+        (0, _createRecipeCardV2Default.default)(arrayOfRecipes);
     // Catch error massage and show them in the UI
     } catch (e) {
         const error = document.getElementById("error-message");
@@ -568,9 +627,9 @@ async function fetchRecipeData(searchQuery) {
         error.innerContent = "internal server error";
     }
 }
-fetchRecipeData("pasta");
+exports.default = fetchRecipeData;
 
-},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./funtions/createRecipeCard":"aUuo7"}],"jo6P5":[function(require,module,exports) {
+},{"axios":"jo6P5","./createRecipeCard":"aUuo7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./createRecipeCardV2":"ktsrK"}],"jo6P5":[function(require,module,exports) {
 module.exports = require("./lib/axios");
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -3925,48 +3984,48 @@ var utils = require("./../utils");
     return utils.isObject(payload) && payload.isAxiosError === true;
 };
 
-},{"./../utils":"5By4s"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"aUuo7":[function(require,module,exports) {
+},{"./../utils":"5By4s"}],"aUuo7":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 function createRecipeCard(arr) {
     const recipeList = document.getElementById("recipe-card-list");
+    recipeList.innerHTML = "";
     arr.map((item)=>{
         recipeList.innerHTML += `
-            <li> ${item.recipe.label}</li>
+            <li>
+                <h3>${item.recipe.label}</h3>
+                <img src="${item.recipe.image}" alt="${item.recipe.label}" />
+            </li>
         `;
     });
 }
 exports.default = createRecipeCard;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ktsrK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function createRecipeCardV2(arr) {
+    const recipeList = document.getElementById("recipe-card-list");
+    arr.map((item)=>{
+        // Create a list item for eatch recipe.
+        const recipeItem = document.createElement("li");
+        recipeItem.setAttribute("class", "recipe-cards");
+        // craete a H3 element for recipe
+        const recipeLabel = document.createElement("h3");
+        recipeLabel.setAttribute("class", "recipe-lable");
+        recipeLabel.textContent = `${item.recipe.label}`;
+        //create a img element
+        const recipeImg = document.createElement("img");
+        recipeImg.setAttribute("scr", `${item.recipe.image}`);
+        recipeImg.setAttribute("alt", `${item.recipe.label}`);
+        // Append li with h3 & img
+        recipeItem.appendChild(recipeLabel);
+        recipeItem.appendChild(recipeImg);
+        // Append ul with li
+        recipeList.appendChild(recipeItem);
+    });
+}
+exports.default = createRecipeCardV2;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["8TtF2","gLLPy"], "gLLPy", "parcelRequire457f")
 
