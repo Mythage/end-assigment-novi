@@ -589,8 +589,6 @@ var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _createRecipeCard = require("./createRecipeCard");
 var _createRecipeCardDefault = parcelHelpers.interopDefault(_createRecipeCard);
-var _createRecipeCardV2 = require("./createRecipeCardV2");
-var _createRecipeCardV2Default = parcelHelpers.interopDefault(_createRecipeCardV2);
 async function fetchRecipeData(searchQuery, mealType, cuisineType, diet, time) {
     //Declaration of input values for API
     const URI = "https://api.edamam.com";
@@ -616,8 +614,7 @@ async function fetchRecipeData(searchQuery, mealType, cuisineType, diet, time) {
         // Store recepi key in variable
         const arrayOfRecipes = response.data.hits;
         // console.log(arrayOfRecipes);
-        // createRecipeCard( arrayOfRecipes );
-        (0, _createRecipeCardV2Default.default)(arrayOfRecipes);
+        (0, _createRecipeCardDefault.default)(arrayOfRecipes);
     // Catch error massage and show them in the UI
     } catch (e) {
         const error = document.getElementById("error-message");
@@ -629,7 +626,7 @@ async function fetchRecipeData(searchQuery, mealType, cuisineType, diet, time) {
 }
 exports.default = fetchRecipeData;
 
-},{"axios":"jo6P5","./createRecipeCard":"aUuo7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./createRecipeCardV2":"ktsrK"}],"jo6P5":[function(require,module,exports) {
+},{"axios":"jo6P5","./createRecipeCard":"aUuo7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 module.exports = require("./lib/axios");
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -3989,43 +3986,28 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 function createRecipeCard(arr) {
     const recipeList = document.getElementById("recipe-card-list");
-    recipeList.innerHTML = "";
-    arr.map((item)=>{
-        recipeList.innerHTML += `
-            <li>
-                <h3>${item.recipe.label}</h3>
-                <img src="${item.recipe.image}" alt="${item.recipe.label}" />
-            </li>
-        `;
-    });
-}
-exports.default = createRecipeCard;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ktsrK":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function createRecipeCardV2(arr) {
-    const recipeList = document.getElementById("recipe-card-list");
     arr.map((item)=>{
         // Create a list item for eatch recipe.
         const recipeItem = document.createElement("li");
-        recipeItem.setAttribute("class", "recipe-cards");
+        recipeItem.setAttribute("class", "card__main card--style");
+        // recipeItem.setAttribute('class', 'card--style');
         // craete a H3 element for recipe
         const recipeLabel = document.createElement("h3");
         recipeLabel.setAttribute("class", "recipe-lable");
         recipeLabel.textContent = `${item.recipe.label}`;
         //create a img element
         const recipeImg = document.createElement("img");
-        recipeImg.setAttribute("scr", `${item.recipe.image}`);
+        recipeImg.setAttribute("src", `${item.recipe.image}`);
         recipeImg.setAttribute("alt", `${item.recipe.label}`);
+        recipeImg.setAttribute("class", "card--img");
         // Append li with h3 & img
-        recipeItem.appendChild(recipeLabel);
         recipeItem.appendChild(recipeImg);
+        recipeItem.appendChild(recipeLabel);
         // Append ul with li
         recipeList.appendChild(recipeItem);
     });
 }
-exports.default = createRecipeCardV2;
+exports.default = createRecipeCard;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["8TtF2","gLLPy"], "gLLPy", "parcelRequire457f")
 

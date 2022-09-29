@@ -6,7 +6,8 @@
 
          // Create a list item for eatch recipe.
          const recipeItem = document.createElement('li');
-         recipeItem.setAttribute('class', 'recipe-cards');
+         recipeItem.setAttribute('class', 'card__main card--style');
+         // recipeItem.setAttribute('class', 'card--style');
 
          // craete a H3 element for recipe
          const recipeLabel = document.createElement('h3');
@@ -15,12 +16,13 @@
 
          //create a img element
          const recipeImg = document.createElement('img');
-         recipeImg.setAttribute('scr', `${ item.recipe.image }`);
+         recipeImg.setAttribute('src', `${ item.recipe.image }`);
          recipeImg.setAttribute('alt', `${ item.recipe.label }`);
+         recipeImg.setAttribute('class', 'card--img')
 
          // Append li with h3 & img
-         recipeItem.appendChild(recipeLabel);
          recipeItem.appendChild(recipeImg);
+         recipeItem.appendChild(recipeLabel);
 
          // Append ul with li
          recipeList.appendChild(recipeItem);

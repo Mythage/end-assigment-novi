@@ -11,6 +11,7 @@ header {
 :root {
   --container-height: 200px;
   --container-width: 300px;
+  --container-img-height: 150px;
   --Button: #70b6be;
   --background-drk-blue: #283e53;
 }
@@ -90,30 +91,18 @@ header {
   top: 250px;
 }
 
-.recipe-cards {
-  background-color: var(--Button);
-  border-radius: 10px;
-  margin: 1em;
-  box-shadow: 0 5px 35px #000;
-}
-
-.card {
-  height: var(--container-height);
-  width: var(--container-width);
-}
-
-.card:nth-of-type(2) {
+.card__header:nth-of-type(2) {
   height: calc(1.5 * var(--container-height));
   width: calc(1.5 * var(--container-width));
   z-index: 2;
 }
 
-.card:nth-of-type(1) {
+.card__header:nth-of-type(1) {
   position: relative;
   left: 80px;
 }
 
-.card:nth-of-type(3) {
+.card__header:nth-of-type(3) {
   position: relative;
   right: 80px;
 }
@@ -157,6 +146,26 @@ header {
   border-radius: 15px;
   margin: 10px;
   padding: 5px;
+}
+
+.card__header, .card__main {
+  height: var(--container-height);
+  width: var(--container-width);
+}
+
+.card--style {
+  border-radius: 10px;
+  margin: 1em;
+  list-style: none;
+  box-shadow: 0 5px 35px #000;
+}
+
+.card--img {
+  object-fit: fill;
+  height: var(--container-img-height);
+  width: var(--container-width);
+  border-bottom: 1px solid gray;
+  border-radius: 10px 10px 0 0;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */
