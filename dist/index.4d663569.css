@@ -82,7 +82,7 @@ header {
   top: 150px;
 }
 
-.container-cards {
+.container__headerCards {
   justify-content: center;
   align-items: center;
   gap: 1em;
@@ -176,13 +176,13 @@ header {
 }
 
 .card--label {
-  padding: 10px;
+  padding-left: 5px;
 }
 
 .card--time {
   background-image: url("time.350d0404.svg");
   background-repeat: no-repeat;
-  padding-left: 2em;
+  padding: 3px 0 5px 40px;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */

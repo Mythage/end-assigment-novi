@@ -10,29 +10,31 @@ export default async function fetchRecipeData(searchQuery, mealType, cuisineType
     const API_KEY = "d9ee381f552a7f704393ade7c82cffc0";
     const API_ID = "305c6b1f";
 
-    // if succesfull then ...
+    // if successful then ...
     try {
-        //fetch data from API
+        //fetch data from API with a fallback to NUll for the parameters
         const response = await axios.get(URI + ENDPOINT,{
             params: {
                 type:"public",
                 app_id: API_ID,
                 app_key: API_KEY,
                 q: searchQuery,
-                mealType: mealType,
-                cuisineType: cuisineType,
-                diet: diet,
-                time: time
+                mealType: mealType || null,
+                cuisineType: cuisineType || null,
+                diet: diet || null,
+                time: time || null,
+                random: true
+
             }
         } )
         console.log(response)
-        // Store recepi key in variable
-        const arrayOfRecipes = response.data.hits
-        // console.log(arrayOfRecipes);
+        // Store recipe hits to use later in JS
+        const arrayOfRecipes = response.data.hits;
+
 
         createRecipeCard( arrayOfRecipes);
 
-        // Catch error massage and show them in the UI
+        // Catching error massage and show them in the UI
     } catch (e) {
         const error = document.getElementById('error-message')
 

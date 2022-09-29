@@ -595,27 +595,27 @@ async function fetchRecipeData(searchQuery, mealType, cuisineType, diet, time) {
     const ENDPOINT = "/api/recipes/v2";
     const API_KEY = "d9ee381f552a7f704393ade7c82cffc0";
     const API_ID = "305c6b1f";
-    // if succesfull then ...
+    // if successful then ...
     try {
-        //fetch data from API
+        //fetch data from API with a fallback to NUll for the parameters
         const response = await (0, _axiosDefault.default).get(URI + ENDPOINT, {
             params: {
                 type: "public",
                 app_id: API_ID,
                 app_key: API_KEY,
                 q: searchQuery,
-                mealType: mealType,
-                cuisineType: cuisineType,
-                diet: diet,
-                time: time
+                mealType: mealType || null,
+                cuisineType: cuisineType || null,
+                diet: diet || null,
+                time: time || null,
+                random: true
             }
         });
         console.log(response);
-        // Store recepi key in variable
+        // Store recipe hits to use later in JS
         const arrayOfRecipes = response.data.hits;
-        // console.log(arrayOfRecipes);
         (0, _createRecipeCardDefault.default)(arrayOfRecipes);
-    // Catch error massage and show them in the UI
+    // Catching error massage and show them in the UI
     } catch (e) {
         const error = document.getElementById("error-message");
         if (e.response.status === 404) //Execute page not found massage
@@ -3994,7 +3994,7 @@ function createRecipeCard(arr) {
         recipeItem.setAttribute("class", "card__main card--style");
         // craete a H3 element for recipe
         const recipeLabel = document.createElement("h3");
-        recipeLabel.setAttribute("class", "recipe-lable");
+        recipeLabel.setAttribute("class", "card--label");
         recipeLabel.textContent = `${item.recipe.label}`;
         //create a img element
         const recipeImg = document.createElement("img");

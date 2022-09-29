@@ -11,7 +11,7 @@
 
          // craete a H3 element for recipe
          const recipeLabel = document.createElement('h3');
-         recipeLabel.setAttribute('class', 'recipe-lable');
+         recipeLabel.setAttribute('class', 'card--label');
          recipeLabel.textContent = `${ item.recipe.label }`
 
          //create a img element
