@@ -130,6 +130,11 @@ body {
     height: calc(1.5 * var(--container-height));
     width: calc(1.5 * var(--container-width));
     z-index: 2;
+    font-size: 21px;
+}
+.card__header:nth-of-type(2) img {
+    height: calc(1.5 * var(--container-img-height));
+    width: calc(1.5 * var(--container-width));
 }
 .card__header:nth-of-type(1) {
     position: relative;
@@ -191,6 +196,7 @@ body {
     width: var(--container-width);
 }
 .card--style {
+    background: white;
     list-style: none;
     box-shadow: 0 5px 35px black ;
     border-radius: 10px;
