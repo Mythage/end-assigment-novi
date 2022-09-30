@@ -16,6 +16,34 @@ header {
   --background-drk-blue: #283e53;
 }
 
+body {
+  font-family: poppins, sans-serif;
+}
+
+.header-text {
+  color: #fff;
+  gap: 5px;
+  font-family: poppins, sans-serif;
+  font-size: 50px;
+  top: 150px;
+}
+
+.header--title {
+  font-family: Austein, sans-serif;
+  font-size: 40px;
+  font-weight: lighter;
+}
+
+.header--nav {
+  font-family: poppins, sans-serif;
+  font-weight: bold;
+}
+
+.card__text {
+  font-family: poppins, sans-serif;
+  font-size: smaller;
+}
+
 .button {
   background: var(--Button);
   width: 100px;
@@ -73,13 +101,6 @@ header {
   align-items: center;
   list-style: none;
   display: flex;
-}
-
-.header-text {
-  color: #fff;
-  gap: 5px;
-  font-size: 50px;
-  top: 150px;
 }
 
 .container__headerCards {
@@ -168,6 +189,7 @@ header {
 }
 
 .card--ulStyle {
+  text-align: center;
   flex-flow: wrap;
   flex: 0 100%;
   justify-content: center;
@@ -175,14 +197,22 @@ header {
   display: flex;
 }
 
+.card--ulStyle p {
+  display: inline;
+}
+
 .card--label {
-  padding-left: 5px;
+  justify-content: center;
+  padding: 5px 0 12px;
+  display: flex;
 }
 
 .card--time {
   background-image: url("time.350d0404.svg");
   background-repeat: no-repeat;
-  padding: 3px 0 5px 40px;
+  background-size: 12px;
+  margin-left: 0;
+  padding-left: 15px;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */

@@ -33,8 +33,29 @@ header {
     --background-drk-blue: #283e53;
 }
 /* ------------------------------- 2. Typography -------------------------------- */
-
-
+body {
+    font-family: poppins, sans-serif;
+}
+.header-text {
+    font-family: poppins, sans-serif;
+    color: white;
+    font-size: 50px;
+    gap: 5px;
+    top: 150px;
+}
+.header--title{
+    font-family: Austein, sans-serif;
+    font-weight: lighter;
+    font-size: 40px;
+}
+.header--nav{
+    font-family: poppins, sans-serif;
+    font-weight: bold;
+}
+.card__text{
+    font-family: poppins, sans-serif;
+    font-size: smaller;
+}
 /* ------------------------------- 3.1 Reusables -------------------------------- */
 
 .button {
@@ -95,12 +116,7 @@ header {
     justify-content: space-around;
     align-items: center;
 }
-.header-text {
-    color: white;
-    font-size: 50px;
-    gap: 5px;
-    top: 150px;
-}
+
 /* ------------------------------- 4.1.2 Header recipe cards -------------------- */
 .container__headerCards{
     display: flex;
@@ -194,12 +210,21 @@ header {
     gap: 5em;
     justify-content: center;
     flex: 0 1 100%;
+    text-align: center;
+}
+.card--ulStyle p {
+    display: inline;
 }
 .card--label {
-    padding-left: 5px;
+    padding: 5px 0 12px 0;
+    display: flex;
+    justify-content: center;
 }
 .card--time {
-    padding: 3px 0 5px 40px;
+    margin-left: 0;
+    padding-left: 15px;
     background-image: url("/assets/icons/time.svg");
     background-repeat: no-repeat;
+    background-size: 12px;
+
 }
