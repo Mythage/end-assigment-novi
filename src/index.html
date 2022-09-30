@@ -2,11 +2,141 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>The_clueless_Cook</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../assets/fonts/fonts.css">
     <script defer src="main.js" type="module"></script>
 </head>
 <body>
-<h1>testing</h1>
+<header class="">
+    <div class="outer-container">
+        <nav class="full-width navigator">
+            <h1 class="header--title">The Clueless Cook</h1>
+            <ul class="header--nav">
+                <li>Home</li>
+                <li>About</li>
+                <li>Calculator</li>
+            </ul>
+        </nav>
+        <div class="full-width backgroundImg" id="headerContainer">
+            <section class="inner-container header-text">
+                <h1>Delicious Recipes.</h1>
+                <h2>Daily Updated.</h2>
+                <button class="button" type="button"><a>Find Recipes</a></button>
+            </section>
+            <section class="container__headerCards">
+                <article class="card__header card--style ">
+                    <p class=""> 1</p>
+                </article>
+                <article class="card__header card--style ">
+                    <p class="">2 </p>
+                </article>
+                <article class="card__header card--style ">
+                    <p class="">3</p>
+                </article>
+            </section>
+        </div>
+    </div>
+</header>
+<main class="outer-container">
+    <div class="full-width searchbar-nav">
+        <form id="onSubmit" class="inner-container">
+            <div class="searchbar">
+                <label for="ingredients-field">
+                    <input type="text" id="ingredients-field" placeholder="zoek op ingrediënten"><span></span>
+                </label>
+                <label for="meal-type-field">
+                    <select name="meal-type-field" id="meal-type-field">
+                        <option selected value="">meal type</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Dinner">Dinner</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Snack">Snack</option>
+                        <option value="Teatime">Teatime</option>
+                    </select>
+                </label>
+                <label for="cuisine-type">
+                    <select name="cuisine-type" id="cuisine-type">
+                        <option selected value="">Cuisine type</option>
+                        <option value="American">American</option>
+                        <option value="Asian">Asian</option>
+                        <option value="British">British</option>
+                        <option value="Caribbean">Caribbean</option>
+                        <option value="Central Europe">Central Europe</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Eastern Europe">Eastern Europe</option>
+                        <option value="French">French</option>
+                        <option value="Indian">Indian</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Kosher">Kosher</option>
+                        <option value="Mediterranean">Mediterranean</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Middle Eastern">Middle Eastern</option>
+                        <option value="Nordic">Nordic</option>
+                        <option value="South American">South American</option>
+                        <option value="South East Asian">South East Asian</option>
+                    </select>
+                </label>
+                <label for="diet-type">
+                    <select name="diet-type" id="diet-type">
+                        <option selected value="">Diet type</option>
+                        <option value="balanced">balanced</option>
+                        <option value="high-fiber">high-fiber</option>
+                        <option value="high-protein">high-protein</option>
+                        <option value="low-carb">low-carb</option>
+                        <option value="low-fat">low-fat</option>
+                        <option value="low-sodium">low-sodium</option>
+                    </select>
+                </label>
+                <label for="time">
+                    <select name="time" id="time">
+                        <option selected value="">Time</option>
+                        <option value="15">15 min</option>
+                        <option value="30">30 min</option>
+                        <option value="45">45 min</option>
+                        <option value="60">60 min</option>
+                        <option value="99">60+ min</option>
+                    </select>
+                </label>
+                <button class="button" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+    <ul  class="" id="recipe-card-list"></ul>
+    <span id="error-message"></span>
+</main>
+<footer class="outer-container footerStyling ">
+    <article class="container-footer full-width ">
+        <section>
+            <h3>Information</h3>
+            <p>Nullam a enim</p>
+            <p>Quisque cursus</p>
+            <p>Cras egestas</p>
+            <p>Nunc vitae</p>
+        </section>
+        <section>
+            <h3>About</h3>
+            <p>Quisque cursus</p>
+            <p>Cras egestas</p>
+            <p>Nunc vitae</p>
+        </section>
+        <section>
+            <h3>Contact</h3>
+            <p>Cras egestas</p>
+            <p>Nunc vitae</p>
+            <p>Nullam a enim</p>
+        </section>
+        <section class="">
+            <h3>Social</h3>
+            <div class="icons-design">
+                <img src="/assets/icons/facebook.svg" alt="Facebook Icon">
+                <img src="/assets/icons/instagram.svg" alt="Instagram Icon">
+                <img src="/assets/icons/linkedin.svg" alt="Linkedin Icon">
+                <img src="/assets/icons/twitter.svg" alt="Twitter Icon">
+            </div>
+        </section>
+    </article>
+</footer>
 </body>
 </html>

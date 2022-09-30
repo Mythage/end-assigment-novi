@@ -7,6 +7,9 @@
         3.2 Other
     4. Areas
         4.1 Header
+        4.1.2  Header Recipe cards
+        4.2 Main
+
 
 
 ///////////////////////*/
@@ -16,5 +19,212 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /*outline: 2px solid grey;*/
+    /*outline: 1px solid grey;*/
+}
+header {
+   height: 100vh
+}
+
+:root {
+    --container-height: 225px;
+    --container-width: 300px;
+    --container-img-height: 150px;
+    --Button: #70b6be;
+    --background-drk-blue: #283e53;
+}
+/* ------------------------------- 2. Typography -------------------------------- */
+body {
+    font-family: poppins, sans-serif;
+}
+.header-text {
+    font-family: poppins, sans-serif;
+    color: white;
+    font-size: 50px;
+    gap: 5px;
+    top: 150px;
+}
+.header--title{
+    font-family: Austein, sans-serif;
+    font-weight: lighter;
+    font-size: 40px;
+}
+.header--nav{
+    font-family: poppins, sans-serif;
+    font-weight: bold;
+}
+.card__text{
+    font-family: poppins, sans-serif;
+    font-size: smaller;
+}
+/* ------------------------------- 3.1 Reusables -------------------------------- */
+
+.button {
+    border-radius: 5px;
+    border: 1px solid black;
+    background: var(--Button);
+    width: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.outer-container {
+    /*outline:  2px  solid black;*/
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    flex-shrink: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+}
+.inner-container {
+    /*outline: 2px solid red;*/
+    display: flex;
+    flex-direction: column;
+    max-width: 1248px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin: 0 auto;
+    align-items: flex-start;
+    position: relative;
+}
+.full-width{
+    flex-basis: 100%;
+}
+
+/* ------------------------------- 4.1 Header -------------------------------- */
+
+.backgroundImg{
+    background-image: url("/assets/images/hero-image.jpg");
+    background-size: cover;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.navigator {
+    display: flex;
+    max-width: 1248px;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+.navigator ul{
+    flex: 0 1 250px;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* ------------------------------- 4.1.2 Header recipe cards -------------------- */
+.container__headerCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    position: relative;
+    top: 250px;
+}
+.card__header:nth-of-type(2) {
+    height: calc(1.5 * var(--container-height));
+    width: calc(1.5 * var(--container-width));
+    z-index: 2;
+}
+.card__header:nth-of-type(1) {
+    position: relative;
+    left: 80px;
+}
+.card__header:nth-of-type(3) {
+    position: relative;
+    right: 80px;
+}
+/* ------------------------------- 4.2 Main -------------------------------- */
+
+.searchbar-nav {
+    background: var(--background-drk-blue);
+    padding: 1em;
+}
+.searchbar {
+    display: flex;
+    gap: 5em;
+    align-self: center;
+}
+.searchbar input, select {
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 5px 5px 5px 30px;
+}
+
+/* ------------------------------- 4.3 Footer -------------------------------- */
+
+.footerStyling {
+    background: var(--background-drk-blue);
+    color: var(--Button);
+}
+.container-footer{
+    /*outline: 1px solid red;*/
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1248px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    justify-content: space-evenly;
+}
+.icons-design img{
+    padding: 5px;
+    background: var(--Button);
+    border-radius: 15px;
+    margin: 10px;
+}
+
+/* ------------------------------- JS Classes -------------------------------- */
+
+.card__header {
+    height: var(--container-height);
+    width: var(--container-width);
+}
+.card__main {
+    height: var(--container-height);
+    width: var(--container-width);
+}
+.card--style {
+    list-style: none;
+    box-shadow: 0 5px 35px black ;
+    border-radius: 10px;
+    margin: 1em;
+}
+.card--img {
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid gray;
+    height: var(--container-img-height) ;
+    width: var(--container-width);
+}
+.card--ulStyle {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+    justify-content: center;
+    flex: 0 1 100%;
+    text-align: center;
+}
+.card--ulStyle p {
+    display: inline;
+}
+.card--label {
+    padding: 5px 0 12px 0;
+    display: flex;
+    justify-content: center;
+}
+.card--time {
+    margin-left: 0;
+    padding-left: 15px;
+    background-image: url("/assets/icons/time.svg");
+    background-repeat: no-repeat;
+    background-size: 12px;
+
 }
