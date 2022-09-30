@@ -589,36 +589,33 @@ var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _createRecipeCard = require("./createRecipeCard");
 var _createRecipeCardDefault = parcelHelpers.interopDefault(_createRecipeCard);
-var _createRecipeCardV2 = require("./createRecipeCardV2");
-var _createRecipeCardV2Default = parcelHelpers.interopDefault(_createRecipeCardV2);
 async function fetchRecipeData(searchQuery, mealType, cuisineType, diet, time) {
     //Declaration of input values for API
     const URI = "https://api.edamam.com";
     const ENDPOINT = "/api/recipes/v2";
     const API_KEY = "d9ee381f552a7f704393ade7c82cffc0";
     const API_ID = "305c6b1f";
-    // if succesfull then ...
+    // if successful then ...
     try {
-        //fetch data from API
+        //fetch data from API with a fallback to NUll for the parameters
         const response = await (0, _axiosDefault.default).get(URI + ENDPOINT, {
             params: {
                 type: "public",
                 app_id: API_ID,
                 app_key: API_KEY,
                 q: searchQuery,
-                mealType: mealType,
-                cuisineType: cuisineType,
-                diet: diet,
-                time: time
+                mealType: mealType || null,
+                cuisineType: cuisineType || null,
+                diet: diet || null,
+                time: time || null,
+                random: true
             }
         });
         console.log(response);
-        // Store recepi key in variable
+        // Store recipe hits to use later in JS
         const arrayOfRecipes = response.data.hits;
-        // console.log(arrayOfRecipes);
-        // createRecipeCard( arrayOfRecipes );
-        (0, _createRecipeCardV2Default.default)(arrayOfRecipes);
-    // Catch error massage and show them in the UI
+        (0, _createRecipeCardDefault.default)(arrayOfRecipes);
+    // Catching error massage and show them in the UI
     } catch (e) {
         const error = document.getElementById("error-message");
         if (e.response.status === 404) //Execute page not found massage
@@ -629,7 +626,7 @@ async function fetchRecipeData(searchQuery, mealType, cuisineType, diet, time) {
 }
 exports.default = fetchRecipeData;
 
-},{"axios":"jo6P5","./createRecipeCard":"aUuo7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./createRecipeCardV2":"ktsrK"}],"jo6P5":[function(require,module,exports) {
+},{"axios":"jo6P5","./createRecipeCard":"aUuo7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 module.exports = require("./lib/axios");
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -3990,42 +3987,39 @@ parcelHelpers.defineInteropFlag(exports);
 function createRecipeCard(arr) {
     const recipeList = document.getElementById("recipe-card-list");
     recipeList.innerHTML = "";
+    recipeList.setAttribute("class", "card--ulStyle inner-container full-width");
     arr.map((item)=>{
-        recipeList.innerHTML += `
-            <li>
-                <h3>${item.recipe.label}</h3>
-                <img src="${item.recipe.image}" alt="${item.recipe.label}" />
-            </li>
-        `;
-    });
-}
-exports.default = createRecipeCard;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ktsrK":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function createRecipeCardV2(arr) {
-    const recipeList = document.getElementById("recipe-card-list");
-    arr.map((item)=>{
-        // Create a list item for eatch recipe.
+        // Create a list item for each recipe.
         const recipeItem = document.createElement("li");
-        recipeItem.setAttribute("class", "recipe-cards");
-        // craete a H3 element for recipe
+        recipeItem.setAttribute("class", "card__main card--style card__text");
+        // create a H3 element for recipe
         const recipeLabel = document.createElement("h3");
-        recipeLabel.setAttribute("class", "recipe-lable");
-        recipeLabel.textContent = `${item.recipe.label}`;
+        recipeLabel.setAttribute("class", "card--label");
+        if (item.recipe.label.length > 30) recipeLabel.textContent = `${item.recipe.label.slice(0, 30) + "..."}`;
+        else recipeLabel.textContent = `${item.recipe.label}`;
         //create a img element
         const recipeImg = document.createElement("img");
-        recipeImg.setAttribute("scr", `${item.recipe.image}`);
+        recipeImg.setAttribute("src", `${item.recipe.image}`);
         recipeImg.setAttribute("alt", `${item.recipe.label}`);
+        recipeImg.setAttribute("class", "card--img");
+        // Create paragraph text in element
+        const recipeText = document.createElement("p");
+        recipeText.setAttribute("class", "card--label");
+        recipeText.textContent = `${Math.round(item.recipe.calories)} Calories  | ${item.recipe.ingredientLines.length} ingredients  |`;
+        // Create Time Paragraph in element
+        const recipeTime = document.createElement("p");
+        recipeTime.setAttribute("class", "card--time");
+        recipeTime.textContent = `${item.recipe.totalTime} min`;
         // Append li with h3 & img
-        recipeItem.appendChild(recipeLabel);
         recipeItem.appendChild(recipeImg);
+        recipeItem.appendChild(recipeLabel);
+        recipeItem.appendChild(recipeText);
+        recipeItem.appendChild(recipeTime);
         // Append ul with li
         recipeList.appendChild(recipeItem);
     });
 }
-exports.default = createRecipeCardV2;
+exports.default = createRecipeCard;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["8TtF2","gLLPy"], "gLLPy", "parcelRequire457f")
 
