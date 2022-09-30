@@ -12,7 +12,10 @@
          // create a H3 element for recipe
          const recipeLabel = document.createElement('h3');
          recipeLabel.setAttribute('class', 'card--label');
-         recipeLabel.textContent = `${ item.recipe.label }`
+         if (item.recipe.label.length > 30){
+             recipeLabel.textContent = `${ item.recipe.label.slice(0,30) + '...'}`
+         } else recipeLabel.textContent = `${ item.recipe.label}`
+
 
          //create a img element
          const recipeImg = document.createElement('img');
@@ -23,7 +26,7 @@
          // Create paragraph text in element
          const recipeText = document.createElement('p');
          recipeText.setAttribute('class', 'card--label');
-         recipeText.textContent = `${Math.round( item.recipe.calories)} Calories  | ${item.recipe.ingredientLines.length} ingredients`
+         recipeText.textContent = `${Math.round( item.recipe.calories)} Calories  | ${item.recipe.ingredientLines.length} ingredients  |`
 
          // Create Time Paragraph in element
          const recipeTime = document.createElement('p');

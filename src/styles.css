@@ -210,12 +210,21 @@ body {
     gap: 5em;
     justify-content: center;
     flex: 0 1 100%;
+    text-align: center;
+}
+.card--ulStyle p {
+    display: inline;
 }
 .card--label {
-    padding-left: 5px;
+    padding: 5px 0 12px 0;
+    display: flex;
+    justify-content: center;
 }
 .card--time {
-    padding: 5px 0 8px 30px;
+    margin-left: 0;
+    padding-left: 15px;
     background-image: url("/assets/icons/time.svg");
     background-repeat: no-repeat;
+    background-size: 12px;
+
 }
