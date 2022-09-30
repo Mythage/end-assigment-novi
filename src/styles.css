@@ -26,14 +26,36 @@ header {
 }
 
 :root {
-    --container-height: 200px;
+    --container-height: 225px;
     --container-width: 300px;
+    --container-img-height: 150px;
     --Button: #70b6be;
     --background-drk-blue: #283e53;
 }
 /* ------------------------------- 2. Typography -------------------------------- */
-
-
+body {
+    font-family: poppins, sans-serif;
+}
+.header-text {
+    font-family: poppins, sans-serif;
+    color: white;
+    font-size: 50px;
+    gap: 5px;
+    top: 150px;
+}
+.header--title{
+    font-family: Austein, sans-serif;
+    font-weight: lighter;
+    font-size: 40px;
+}
+.header--nav{
+    font-family: poppins, sans-serif;
+    font-weight: bold;
+}
+.card__text{
+    font-family: poppins, sans-serif;
+    font-size: smaller;
+}
 /* ------------------------------- 3.1 Reusables -------------------------------- */
 
 .button {
@@ -94,14 +116,9 @@ header {
     justify-content: space-around;
     align-items: center;
 }
-.header-text {
-    color: white;
-    font-size: 50px;
-    gap: 5px;
-    top: 150px;
-}
+
 /* ------------------------------- 4.1.2 Header recipe cards -------------------- */
-.container-cards{
+.container__headerCards{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,27 +126,16 @@ header {
     position: relative;
     top: 250px;
 }
-.recipe-cards {
-    background-color: var(--Button);
-    box-shadow: 0 5px 35px black ;
-    border-radius: 10px;
-    margin: 1em;
-}
-.card {
-    height: var(--container-height);
-    width: var(--container-width);
-}
-
-.card:nth-of-type(2) {
+.card__header:nth-of-type(2) {
     height: calc(1.5 * var(--container-height));
     width: calc(1.5 * var(--container-width));
     z-index: 2;
 }
-.card:nth-of-type(1) {
+.card__header:nth-of-type(1) {
     position: relative;
     left: 80px;
 }
-.card:nth-of-type(3) {
+.card__header:nth-of-type(3) {
     position: relative;
     right: 80px;
 }
@@ -147,8 +153,7 @@ header {
 .searchbar input, select {
     border-radius: 5px;
     border: 1px solid grey;
-    padding: 5px 30px 5px 30px;
-    text-align: center;
+    padding: 5px 5px 5px 30px;
 }
 
 /* ------------------------------- 4.3 Footer -------------------------------- */
@@ -173,4 +178,53 @@ header {
     background: var(--Button);
     border-radius: 15px;
     margin: 10px;
+}
+
+/* ------------------------------- JS Classes -------------------------------- */
+
+.card__header {
+    height: var(--container-height);
+    width: var(--container-width);
+}
+.card__main {
+    height: var(--container-height);
+    width: var(--container-width);
+}
+.card--style {
+    list-style: none;
+    box-shadow: 0 5px 35px black ;
+    border-radius: 10px;
+    margin: 1em;
+}
+.card--img {
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid gray;
+    height: var(--container-img-height) ;
+    width: var(--container-width);
+}
+.card--ulStyle {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+    justify-content: center;
+    flex: 0 1 100%;
+    text-align: center;
+}
+.card--ulStyle p {
+    display: inline;
+}
+.card--label {
+    padding: 5px 0 12px 0;
+    display: flex;
+    justify-content: center;
+}
+.card--time {
+    margin-left: 0;
+    padding-left: 15px;
+    background-image: url("/assets/icons/time.svg");
+    background-repeat: no-repeat;
+    background-size: 12px;
+
 }

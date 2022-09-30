@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <title>The_clueless_Cook</title>
     <link rel="stylesheet" href="/index.4d663569.css">
+    <link rel="stylesheet" href="/index.4a39348a.css">
     <script defer="" src="/index.4d6bcbeb.js"></script>
 </head>
 <body>
 <header class="">
     <div class="outer-container">
         <nav class="full-width navigator">
-            <h1 class="">The Clueless Cook</h1>
-            <ul>
+            <h1 class="header--title">The Clueless Cook</h1>
+            <ul class="header--nav">
                 <li>Home</li>
                 <li>About</li>
                 <li>Calculator</li>
@@ -23,14 +24,14 @@
                 <h2>Daily Updated.</h2>
                 <button class="button" type="button"><a>Find Recipes</a></button>
             </section>
-            <section class="container-cards">
-                <article class="card recipe-cards ">
+            <section class="container__headerCards">
+                <article class="card__header card--style ">
                     <p class=""> 1</p>
                 </article>
-                <article class="card recipe-cards ">
+                <article class="card__header card--style ">
                     <p class="">2 </p>
                 </article>
-                <article class="card recipe-cards ">
+                <article class="card__header card--style ">
                     <p class="">3</p>
                 </article>
             </section>
@@ -39,7 +40,7 @@
 </header>
 <main class="outer-container">
     <div class="full-width searchbar-nav">
-        <form class="inner-container">
+        <form id="onSubmit" class="inner-container">
             <div class="searchbar">
                 <label for="ingredients-field">
                     <input type="text" id="ingredients-field" placeholder="zoek op ingrediënten"><span></span>
@@ -102,7 +103,8 @@
             </div>
         </form>
     </div>
-    <ul id="recipe-card-list"></ul>
+    <ul class="" id="recipe-card-list"></ul>
+    <span id="error-message"></span>
 </main>
 <footer class="outer-container footerStyling ">
     <article class="container-footer full-width ">
