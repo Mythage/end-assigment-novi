@@ -1,8 +1,9 @@
 
 //Import from all created functions
-import fetchRecipeData from "./funtions/fetchRecipeData";
+import fetchRecipeData from "./functions/fetchRecipeData";
+import randomCardGen from "./functions/randomCardGen";
 
-
+randomCardGen('pizza')
 // Reference to form submit
     const submitForm = document.getElementById('onSubmit');
 

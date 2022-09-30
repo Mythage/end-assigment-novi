@@ -3,7 +3,7 @@
     1. Global Styles
     2. Typography
     3. Layout
-        3.1 Reusables
+        3.1 Reusable
         3.2 Other
     4. Areas
         4.1 Header
@@ -56,7 +56,7 @@ body {
     font-family: poppins, sans-serif;
     font-size: smaller;
 }
-/* ------------------------------- 3.1 Reusables -------------------------------- */
+/* ------------------------------- 3.1 Reusable -------------------------------- */
 
 .button {
     border-radius: 5px;
@@ -124,7 +124,7 @@ body {
     align-items: center;
     gap: 1em;
     position: relative;
-    top: 250px;
+    top: 125px;
 }
 .card__header:nth-of-type(2) {
     height: calc(1.5 * var(--container-height));
@@ -133,11 +133,11 @@ body {
 }
 .card__header:nth-of-type(1) {
     position: relative;
-    left: 80px;
+    left: 150px;
 }
 .card__header:nth-of-type(3) {
     position: relative;
-    right: 80px;
+    right: 150px;
 }
 /* ------------------------------- 4.2 Main -------------------------------- */
 

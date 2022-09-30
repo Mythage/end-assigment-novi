@@ -109,7 +109,7 @@ body {
   gap: 1em;
   display: flex;
   position: relative;
-  top: 250px;
+  top: 125px;
 }
 
 .card__header:nth-of-type(2) {
@@ -120,12 +120,12 @@ body {
 
 .card__header:nth-of-type(1) {
   position: relative;
-  left: 80px;
+  left: 150px;
 }
 
 .card__header:nth-of-type(3) {
   position: relative;
-  right: 80px;
+  right: 150px;
 }
 
 .searchbar-nav {
