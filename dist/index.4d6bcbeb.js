@@ -538,9 +538,9 @@ var _fetchRecipeData = require("./functions/fetchRecipeData");
 var _fetchRecipeDataDefault = parcelHelpers.interopDefault(_fetchRecipeData);
 var _randomCardGen = require("./functions/randomCardGen");
 var _randomCardGenDefault = parcelHelpers.interopDefault(_randomCardGen);
-(0, _randomCardGenDefault.default)("pizza");
+(0, _randomCardGenDefault.default)("cake");
 // Reference to form submit
-const submitForm = document.getElementById("onSubmit");
+const submitForm = document.getElementById("recipeSearchForm");
 // Reference to input fields
 const ingredients = document.getElementById("ingredients-field");
 const mealType = document.getElementById("meal-type-field");
@@ -618,7 +618,7 @@ async function fetchRecipeData(searchQuery, mealType, cuisineType, diet, time) {
         // Store recipe hits to use later in JS
         const arrayOfRecipes = response.data.hits;
         (0, _createRecipeCardDefault.default)(arrayOfRecipes);
-    // Catching error massage and show them in the UI
+    // Catching error message and show them in the UI
     } catch (e) {
         const error = document.getElementById("error-message");
         if (e.response.status === 404) //Execute page not found massage
@@ -4013,11 +4013,16 @@ function createRecipeCard(arr) {
         const recipeTime = document.createElement("p");
         recipeTime.setAttribute("class", "card--time");
         recipeTime.textContent = `${item.recipe.totalTime} min`;
+        const link = document.createElement("a");
+        let url = new URL(item.recipe.uri);
+        console.log(url.hash);
+        link.setAttribute("href", "recipe");
         // Append li with h3 & img
-        recipeItem.appendChild(recipeImg);
-        recipeItem.appendChild(recipeLabel);
-        recipeItem.appendChild(recipeText);
-        recipeItem.appendChild(recipeTime);
+        recipeItem.appendChild(link);
+        link.appendChild(recipeImg);
+        link.appendChild(recipeLabel);
+        link.appendChild(recipeText);
+        link.appendChild(recipeTime);
         // Append ul with li
         recipeList.appendChild(recipeItem);
     });
@@ -4091,12 +4096,24 @@ function createRecipeCardHeader(arr) {
         // Create Time Paragraph in element
         const recipeTime = document.createElement("p");
         recipeTime.setAttribute("class", "card--time");
-        recipeTime.textContent = `${item.recipe.totalTime} min`;
+        if (item.recipe.totalTime > 0) recipeTime.textContent = `${item.recipe.totalTime} min`;
+        else recipeTime.textContent = `unknown`;
+        // if(item.recipe.totalTime > 0) {
+        //     console.log(item.recipe.totalTime);
+        //     const recipeTime = document.createElement('p');
+        //     recipeTime.setAttribute('class', 'card--time');
+        //     recipeTime.textContent = `${item.recipe.totalTime} min`
+        // }
+        const link = document.createElement("a");
+        let url = new URL(item.recipe.uri);
+        let recipeId = url.hash.replace("#recipe_", "");
+        link.setAttribute("href", "/pages/recipe-page.html#" + recipeId);
         // Append li with h3 & img
-        recipeItem.appendChild(recipeImg);
-        recipeItem.appendChild(recipeLabel);
-        recipeItem.appendChild(recipeText);
-        recipeItem.appendChild(recipeTime);
+        recipeItem.appendChild(link);
+        link.appendChild(recipeImg);
+        link.appendChild(recipeLabel);
+        link.appendChild(recipeText);
+        link.appendChild(recipeTime);
         // Append ul with li
         recipeList.appendChild(recipeItem);
     });

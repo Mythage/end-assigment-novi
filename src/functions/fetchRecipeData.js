@@ -34,7 +34,7 @@ export default async function fetchRecipeData(searchQuery, mealType, cuisineType
 
         createRecipeCard( arrayOfRecipes);
 
-        // Catching error massage and show them in the UI
+        // Catching error message and show them in the UI
     } catch (e) {
         const error = document.getElementById('error-message')
 

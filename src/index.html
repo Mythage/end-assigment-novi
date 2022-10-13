@@ -8,14 +8,14 @@
     <script defer src="main.js" type="module"></script>
 </head>
 <body>
-<header class="">
+<header class="header__homepage">
     <div class="outer-container">
         <nav class="full-width navigator">
             <h1 class="header--title">The Clueless Cook</h1>
             <ul class="header--nav">
                 <li>Home</li>
                 <li>About</li>
-                <li>Calculator</li>
+                <li><a href="pages/calculator.html">Calculator</a></li>
             </ul>
         </nav>
         <div class="full-width backgroundImg" id="headerContainer">
@@ -26,21 +26,15 @@
             </section>
             <section class="container__headerCards">
                 <article id="header-card-one" class="">
-                    <p class=""> 1</p>
+                    <a href="pages/recipe-page.html">Test</a>
                 </article>
-<!--                <article id="header-card-two" class="card__header card&#45;&#45;style ">-->
-<!--                    <p class="">2 </p>-->
-<!--                </article>-->
-<!--                <article id="header-card-three" class="card__header card&#45;&#45;style ">-->
-<!--                    <p class="">3</p>-->
-<!--                </article>-->
             </section>
         </div>
     </div>
 </header>
 <main class="outer-container">
     <div class="full-width searchbar-nav">
-        <form id="onSubmit" class="inner-container">
+        <form id="recipeSearchForm" class="inner-container">
             <div class="searchbar">
                 <label for="ingredients-field">
                     <input type="text" id="ingredients-field" placeholder="zoek op ingrediënten"><span></span>
