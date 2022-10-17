@@ -37,12 +37,6 @@ export default function createRecipeCardHeader( arr ) {
         } else {
             recipeTime.textContent = `unknown`
         }
-        // if(item.recipe.totalTime > 0) {
-        //     console.log(item.recipe.totalTime);
-        //     const recipeTime = document.createElement('p');
-        //     recipeTime.setAttribute('class', 'card--time');
-        //     recipeTime.textContent = `${item.recipe.totalTime} min`
-        // }
 
         const link = document.createElement('a');
         let url = new URL(item.recipe.uri);

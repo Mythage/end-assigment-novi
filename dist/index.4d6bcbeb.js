@@ -4015,8 +4015,14 @@ function createRecipeCard(arr) {
         recipeTime.textContent = `${item.recipe.totalTime} min`;
         const link = document.createElement("a");
         let url = new URL(item.recipe.uri);
-        console.log(url.hash);
-        link.setAttribute("href", "recipe");
+        let recipeId = url.hash.replace("#recipe_", "");
+        link.setAttribute("href", "/pages/recipe-page.html#" + recipeId);
+        // Append li with h3 & img
+        recipeItem.appendChild(link);
+        link.appendChild(recipeImg);
+        link.appendChild(recipeLabel);
+        link.appendChild(recipeText);
+        link.appendChild(recipeTime);
         // Append li with h3 & img
         recipeItem.appendChild(link);
         link.appendChild(recipeImg);
@@ -4098,12 +4104,6 @@ function createRecipeCardHeader(arr) {
         recipeTime.setAttribute("class", "card--time");
         if (item.recipe.totalTime > 0) recipeTime.textContent = `${item.recipe.totalTime} min`;
         else recipeTime.textContent = `unknown`;
-        // if(item.recipe.totalTime > 0) {
-        //     console.log(item.recipe.totalTime);
-        //     const recipeTime = document.createElement('p');
-        //     recipeTime.setAttribute('class', 'card--time');
-        //     recipeTime.textContent = `${item.recipe.totalTime} min`
-        // }
         const link = document.createElement("a");
         let url = new URL(item.recipe.uri);
         let recipeId = url.hash.replace("#recipe_", "");

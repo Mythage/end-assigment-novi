@@ -4,10 +4,6 @@
   padding: 0;
 }
 
-.header__homepage {
-  height: 100vh;
-}
-
 :root {
   --container-height: 225px;
   --container-width: 300px;
@@ -44,24 +40,6 @@ body {
   font-size: smaller;
 }
 
-.button {
-  background: var(--Button);
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 5px;
-  list-style: none;
-}
-
-.button--submit {
-  border: 1px solid #000;
-  border-radius: 5px;
-}
-
-.button--health {
-  border: 1px solid #000;
-  border-radius: 10px;
-}
-
 .outer-container {
   max-width: 100%;
   flex-wrap: wrap;
@@ -88,12 +66,17 @@ body {
   flex-basis: 100%;
 }
 
-.backgroundImg {
-  height: 60vh;
-  background-image: url("hero-image.216d56a7.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.header__homepage {
+  height: 100vh;
+}
+
+.container__headerCards {
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  display: flex;
+  position: relative;
+  top: 125px;
 }
 
 .navigator {
@@ -112,35 +95,12 @@ body {
   display: flex;
 }
 
-.container__headerCards {
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-  display: flex;
-  position: relative;
-  top: 125px;
-}
-
-.card__header:nth-of-type(2) {
-  height: calc(1.5 * var(--container-height));
-  width: calc(1.5 * var(--container-width));
-  z-index: 2;
-  font-size: 21px;
-}
-
-.card__header:nth-of-type(2) img {
-  height: calc(1.5 * var(--container-img-height));
-  width: calc(1.5 * var(--container-width));
-}
-
-.card__header:nth-of-type(1) {
-  position: relative;
-  left: 150px;
-}
-
-.card__header:nth-of-type(3) {
-  position: relative;
-  right: 150px;
+.backgroundImg {
+  height: 60vh;
+  background-image: url("hero-image.216d56a7.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .searchbar-nav {
@@ -181,25 +141,6 @@ body {
   border-radius: 15px;
   margin: 10px;
   padding: 5px;
-}
-
-.card__header {
-  height: var(--container-height);
-  width: var(--container-width);
-}
-
-.card__header:hover {
-  rotate: 10deg;
-}
-
-.card__header a {
-  color: #000;
-  text-decoration: none;
-}
-
-.card__main {
-  height: var(--container-height);
-  width: var(--container-width);
 }
 
 .card--style {
@@ -243,6 +184,65 @@ body {
   background-size: 12px;
   margin-left: 0;
   padding-left: 15px;
+}
+
+.card__header:nth-of-type(1) {
+  position: relative;
+  left: 150px;
+}
+
+.card__header:nth-of-type(3) {
+  position: relative;
+  right: 150px;
+}
+
+.card__header:nth-of-type(2) {
+  height: calc(1.5 * var(--container-height));
+  width: calc(1.5 * var(--container-width));
+  z-index: 2;
+  font-size: 21px;
+}
+
+.card__header:nth-of-type(2) img {
+  height: calc(1.5 * var(--container-img-height));
+  width: calc(1.5 * var(--container-width));
+}
+
+.card__header {
+  height: var(--container-height);
+  width: var(--container-width);
+}
+
+.card__header:hover {
+  rotate: 10deg;
+}
+
+.card__header a {
+  color: #000;
+  text-decoration: none;
+}
+
+.card__main {
+  height: var(--container-height);
+  width: var(--container-width);
+}
+
+.button {
+  background: var(--Button);
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  list-style: none;
+}
+
+.button--submit {
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.button--health {
+  border: 1px solid #000;
+  border-radius: 10px;
 }
 
 .nutrientsTabel td {

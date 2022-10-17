@@ -3,28 +3,27 @@
     1. Global Styles
     2. Typography
     3. Layout
-        3.1 Reusable
-        3.2 Other
-    4. Areas
-        4.1 Header
-        4.1.2  Header Recipe cards
-        4.2 Main
-
-
+        3.1 header
+        3.2 main
+        3.3 footer
+        3.4 recipe page
+        3.5 calculator
+    4. styling
+        4.1 cards
+        4.1.1 Header cards
+        4.1.3 Main Cards
+        4.2 buttons
+        4.3 tables
 
 ///////////////////////*/
 
-/* ------------------------------- 1. Global Styles -------------------------------- */
+/* ------------------------------- 1. Global Styles ------------------------------ */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     /*outline: 1px solid grey;*/
 }
-.header__homepage {
-   height: 100vh
-}
-
 :root {
     --container-height: 225px;
     --container-width: 300px;
@@ -32,7 +31,7 @@
     --Button: #70b6be;
     --background-drk-blue: #283e53;
 }
-/* ------------------------------- 2. Typography -------------------------------- */
+/* ------------------------------- 2. Typography --------------------------------- */
 body {
     font-family: poppins, sans-serif;
 }
@@ -56,22 +55,7 @@ body {
     font-family: poppins, sans-serif;
     font-size: smaller;
 }
-/* ------------------------------- 3.1 Reusable -------------------------------- */
-
-.button {
-    list-style: none;
-    background: var(--Button);
-    width: fit-content;
-    padding: 5px;
-}
-.button--submit {
-    border: 1px solid black;
-    border-radius: 5px;
-}
-.button--health {
-    border: 1px solid black;
-    border-radius: 10px;
-}
+/* ------------------------------- 3.1 layout ------------------------------------ */
 .outer-container {
     /*outline:  2px  solid black;*/
     display: flex;
@@ -98,15 +82,17 @@ body {
 .full-width{
     flex-basis: 100%;
 }
-
-/* ------------------------------- 4.1 Header -------------------------------- */
-
-.backgroundImg{
-    background-image: url("/assets/images/hero-image.jpg");
-    background-size: cover;
-    height: 60vh;
-    background-repeat: no-repeat;
-    background-position: center;
+/* ------------------------------- 3.1 layout Header ----------------------------- */
+.header__homepage {
+    height: 100vh
+}
+.container__headerCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    position: relative;
+    top: 125px;
 }
 .navigator {
     display: flex;
@@ -122,36 +108,14 @@ body {
     justify-content: space-around;
     align-items: center;
 }
-
-/* ------------------------------- 4.1.2 Header recipe cards -------------------- */
-.container__headerCards{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-    position: relative;
-    top: 125px;
+.backgroundImg{
+    background-image: url("/assets/images/hero-image.jpg");
+    background-size: cover;
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-position: center;
 }
-.card__header:nth-of-type(2) {
-    height: calc(1.5 * var(--container-height));
-    width: calc(1.5 * var(--container-width));
-    z-index: 2;
-    font-size: 21px;
-}
-.card__header:nth-of-type(2) img {
-    height: calc(1.5 * var(--container-img-height));
-    width: calc(1.5 * var(--container-width));
-}
-.card__header:nth-of-type(1) {
-    position: relative;
-    left: 150px;
-}
-.card__header:nth-of-type(3) {
-    position: relative;
-    right: 150px;
-}
-/* ------------------------------- 4.2 Main -------------------------------- */
-
+/* --------------------------- 3.2 layout main ------------------------------------*/
 .searchbar-nav {
     background: var(--background-drk-blue);
     padding: 1em;
@@ -166,9 +130,7 @@ body {
     border: 1px solid grey;
     padding: 5px 5px 5px 30px;
 }
-
-/* ------------------------------- 4.3 Footer -------------------------------- */
-
+/* ------------------------------- 3.3 layout Footer ----------------------------- */
 .footerStyling {
     background: var(--background-drk-blue);
     color: var(--Button);
@@ -190,27 +152,9 @@ body {
     border-radius: 15px;
     margin: 10px;
 }
-
-/* ------------------------------- JS Classes -------------------------------- */
-
-.card__header {
-    height: var(--container-height);
-    width: var(--container-width);
-}
-
-.card__header:hover {
-    /*transform: scale(1.1);*/
-    rotate: 10deg;
-}
-
-.card__header a {
-    text-decoration: none;
-    color: black;
-}
-.card__main {
-    height: var(--container-height);
-    width: var(--container-width);
-}
+/* ------------------------------- 3.4 layout recipe page  ----------------------- */
+/* ------------------------------- 3.5 layout Calculator   ----------------------- */
+/* ------------------------------- 4.1 styling cards ----------------------------- */
 .card--style {
     background: white;
     list-style: none;
@@ -250,7 +194,65 @@ body {
     background-size: 12px;
 }
 
+/* ------------------------------- 4.1.1 styling header-cards -------------------- */
+.card__header:nth-of-type(1) {
+    position: relative;
+    left: 150px;
+}
+.card__header:nth-of-type(3) {
+    position: relative;
+    right: 150px;
+}
+.card__header:nth-of-type(2) {
+    height: calc(1.5 * var(--container-height));
+    width: calc(1.5 * var(--container-width));
+    z-index: 2;
+    font-size: 21px;
+}
+.card__header:nth-of-type(2) img {
+    height: calc(1.5 * var(--container-img-height));
+    width: calc(1.5 * var(--container-width));
+}
+.card__header {
+    height: var(--container-height);
+    width: var(--container-width);
+}
+.card__header:hover {
+    /*transform: scale(1.1);*/
+    rotate: 10deg;
+}
+.card__header a {
+    text-decoration: none;
+    color: black;
+}
+/* ------------------------------- 4.1.2 styling Main cards ----------------------- */
+.card__main {
+    height: var(--container-height);
+    width: var(--container-width);
+}
+/* ------------------------------- 4.2 styling buttons ---------------------------- */
+.button {
+    list-style: none;
+    background: var(--Button);
+    width: fit-content;
+    padding: 5px;
+}
+.button--submit {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.button--health {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+/* ------------------------------- 4.3 styling tables ----------------------------- */
 .nutrientsTabel td{
- padding-bottom: 10px;
+    padding-bottom: 10px;
     padding-right: 1em;
 }
+
+
+
+
+
+
