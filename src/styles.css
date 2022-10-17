@@ -21,7 +21,7 @@
     box-sizing: border-box;
     /*outline: 1px solid grey;*/
 }
-header {
+.header__homepage {
    height: 100vh
 }
 
@@ -59,12 +59,18 @@ body {
 /* ------------------------------- 3.1 Reusable -------------------------------- */
 
 .button {
-    border-radius: 5px;
-    border: 1px solid black;
+    list-style: none;
     background: var(--Button);
-    width: 100px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    width: fit-content;
+    padding: 5px;
+}
+.button--submit {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.button--health {
+    border: 1px solid black;
+    border-radius: 10px;
 }
 .outer-container {
     /*outline:  2px  solid black;*/
@@ -191,6 +197,16 @@ body {
     height: var(--container-height);
     width: var(--container-width);
 }
+
+.card__header:hover {
+    /*transform: scale(1.1);*/
+    rotate: 10deg;
+}
+
+.card__header a {
+    text-decoration: none;
+    color: black;
+}
 .card__main {
     height: var(--container-height);
     width: var(--container-width);
@@ -232,5 +248,9 @@ body {
     background-image: url("/assets/icons/time.svg");
     background-repeat: no-repeat;
     background-size: 12px;
+}
 
+.nutrientsTabel td{
+ padding-bottom: 10px;
+    padding-right: 1em;
 }

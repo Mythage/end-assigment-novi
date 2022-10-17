@@ -33,11 +33,17 @@
          recipeTime.setAttribute('class', 'card--time');
          recipeTime.textContent = `${ item.recipe.totalTime} min`
 
+         const link  = document.createElement('a');
+         let url = new URL(item.recipe.uri);
+         console.log(url.hash);
+         link.setAttribute('href', 'recipe');
          // Append li with h3 & img
-         recipeItem.appendChild(recipeImg);
-         recipeItem.appendChild(recipeLabel);
-         recipeItem.appendChild(recipeText);
-         recipeItem.appendChild(recipeTime);
+         recipeItem.appendChild(link);
+
+         link.appendChild(recipeImg);
+         link.appendChild(recipeLabel);
+         link.appendChild(recipeText);
+         link.appendChild(recipeTime);
 
          // Append ul with li
          recipeList.appendChild(recipeItem);
