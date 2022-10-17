@@ -2,7 +2,7 @@
 export default async function createRecipePage(recipe) {
     console.log(recipe);
 
-    //all information for filling the Nutrients tabel on the page
+    //all information for filling the Nutrients tabel on the page.
     const nutrientEngery = document.getElementById('energy');
     nutrientEngery.innerHTML =`${Math.round(recipe.totalNutrients.ENERC_KCAL.quantity)}`
     const nutrientFat = document.getElementById('fat');
@@ -16,6 +16,7 @@ export default async function createRecipePage(recipe) {
     const nutrientSoduim = document.getElementById('soduim');
     nutrientSoduim.innerHTML =`${Math.round(recipe.totalNutrients.NA.quantity)}`
 
+    //creating the const for getting the required elements that need to be filled with API data.
     const recipeLabel = document.getElementById('recipeLabel');
     recipeLabel.setAttribute('class', '');
 
@@ -28,6 +29,7 @@ export default async function createRecipePage(recipe) {
     const recipeImg = document.getElementById('img-container');
     recipeInfo.setAttribute('class', '');
 
+    //creating the elements for the page and fill them with data.
     const recipeTitle = document.createElement('h1');
     recipeTitle.textContent = recipe.label;
 
@@ -41,18 +43,18 @@ export default async function createRecipePage(recipe) {
     const healthLabelTag = document.createElement('h4');
     healthLabelTag.textContent = 'Health labels';
 
+// linking the elements to one and other.
     recipeLabel.appendChild(recipeTitle);
     recipeImg.appendChild(coverImg);
     recipeInfo.appendChild(ingredientsTag);
     healthAndNutrients.appendChild(healthLabelTag);
     recipeInfo.appendChild(ArrToList(recipe));
 }
-// <td>${recipe.totalNutrients.FAT}</td>
-// <td>${recipe.totalNutrients.CHOCDF}</td>
-// <td>${recipe.totalNutrients.SUGER}</td>
-// <td>${recipe.totalNutrients.PROCNT}</td>
-// <td>${recipe.totalNutrients.NA}</td>
+
+//A function that takes the array of a object location in the APi to make a list from it.
 function ArrToList(i){
+
+    // Mapping through the array and creating the list for the ingredients within the Function.
     const ingerdientArr = i.ingredientLines;
     ingerdientArr.forEach(function (item){
 
@@ -69,6 +71,7 @@ function ArrToList(i){
         recipeInfo.appendChild(ingredients)
     });
 
+    //Mapping through the array and creating the list for the health labels within the Function.
     const healthArr = i.healthLabels;
     healthArr.forEach(function (item){
 
