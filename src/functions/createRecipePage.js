@@ -2,6 +2,20 @@
 export default async function createRecipePage(recipe) {
     console.log(recipe);
 
+    //all information for filling the Nutrients tabel on the page
+    const nutrientEngery = document.getElementById('energy');
+    nutrientEngery.innerHTML =`${Math.round(recipe.totalNutrients.ENERC_KCAL.quantity)}`
+    const nutrientFat = document.getElementById('fat');
+    nutrientFat.innerHTML =`${Math.round(recipe.totalNutrients.FAT.quantity)}`
+    const nutrientCarb = document.getElementById('carbs');
+    nutrientCarb.innerHTML =`${Math.round(recipe.totalNutrients.CHOCDF.quantity)}`
+    const nutrientSuger = document.getElementById('suger');
+    nutrientSuger.innerHTML =`${Math.round(recipe.totalNutrients.SUGAR.quantity)}`
+    const nutrientProtein = document.getElementById('protein');
+    nutrientProtein.innerHTML =`${Math.round(recipe.totalNutrients.PROCNT.quantity)}`
+    const nutrientSoduim = document.getElementById('soduim');
+    nutrientSoduim.innerHTML =`${Math.round(recipe.totalNutrients.NA.quantity)}`
+
     const recipeLabel = document.getElementById('recipeLabel');
     recipeLabel.setAttribute('class', '');
 
@@ -11,12 +25,15 @@ export default async function createRecipePage(recipe) {
     const recipeInfo = document.getElementById('recipeInfo');
     recipeInfo.setAttribute('class', '');
 
+    const recipeImg = document.getElementById('img-container');
+    recipeInfo.setAttribute('class', '');
+
     const recipeTitle = document.createElement('h1');
     recipeTitle.textContent = recipe.label;
 
-    const recipeImg = document.createElement('img');
-    recipeImg.setAttribute('src', `${ recipe.image }`);
-    recipeImg.setAttribute('alt', `${ recipe.label }`);
+    const coverImg = document.createElement('img');
+    coverImg.setAttribute('src', `${ recipe.image }`);
+    coverImg.setAttribute('alt', `${ recipe.label }`);
 
     const ingredientsTag = document.createElement('h4');
     ingredientsTag.innerHTML = 'ingredients';
@@ -25,18 +42,20 @@ export default async function createRecipePage(recipe) {
     healthLabelTag.textContent = 'Health labels';
 
     recipeLabel.appendChild(recipeTitle);
-    recipeInfo.appendChild(recipeImg);
+    recipeImg.appendChild(coverImg);
     recipeInfo.appendChild(ingredientsTag);
     healthAndNutrients.appendChild(healthLabelTag);
     recipeInfo.appendChild(ArrToList(recipe));
-
-
-
 }
+// <td>${recipe.totalNutrients.FAT}</td>
+// <td>${recipe.totalNutrients.CHOCDF}</td>
+// <td>${recipe.totalNutrients.SUGER}</td>
+// <td>${recipe.totalNutrients.PROCNT}</td>
+// <td>${recipe.totalNutrients.NA}</td>
 function ArrToList(i){
     const ingerdientArr = i.ingredientLines;
     ingerdientArr.forEach(function (item){
-        console.log(item)
+
         const listIngerdient = document.createElement('li');
         listIngerdient.textContent = item;
 
@@ -49,10 +68,12 @@ function ArrToList(i){
         ingredients.appendChild(listIngerdient)
         recipeInfo.appendChild(ingredients)
     });
+
     const healthArr = i.healthLabels;
     healthArr.forEach(function (item){
-        console.log(item)
+
         const healthLabel = document.createElement('li');
+        healthLabel.setAttribute('class', 'button button--health')
         healthLabel.textContent = item;
 
         const listHealthLabel = document.createElement('ul');
@@ -64,7 +85,9 @@ function ArrToList(i){
         listHealthLabel.appendChild(healthLabel);
         healthLabels.appendChild(listHealthLabel);
     });
+
 }
+
 
 
 

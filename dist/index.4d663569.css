@@ -46,11 +46,20 @@ body {
 
 .button {
   background: var(--Button);
-  width: 100px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  list-style: none;
+}
+
+.button--submit {
   border: 1px solid #000;
   border-radius: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+}
+
+.button--health {
+  border: 1px solid #000;
+  border-radius: 10px;
 }
 
 .outer-container {
@@ -234,6 +243,11 @@ body {
   background-size: 12px;
   margin-left: 0;
   padding-left: 15px;
+}
+
+.nutrientsTabel td {
+  padding-bottom: 10px;
+  padding-right: 1em;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */
