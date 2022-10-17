@@ -3,7 +3,7 @@
     1. Global Styles
     2. Typography
     3. Layout
-        3.1 Reusables
+        3.1 Reusable
         3.2 Other
     4. Areas
         4.1 Header
@@ -21,7 +21,7 @@
     box-sizing: border-box;
     /*outline: 1px solid grey;*/
 }
-header {
+.header__homepage {
    height: 100vh
 }
 
@@ -56,15 +56,21 @@ body {
     font-family: poppins, sans-serif;
     font-size: smaller;
 }
-/* ------------------------------- 3.1 Reusables -------------------------------- */
+/* ------------------------------- 3.1 Reusable -------------------------------- */
 
 .button {
-    border-radius: 5px;
-    border: 1px solid black;
+    list-style: none;
     background: var(--Button);
-    width: 100px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    width: fit-content;
+    padding: 5px;
+}
+.button--submit {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.button--health {
+    border: 1px solid black;
+    border-radius: 10px;
 }
 .outer-container {
     /*outline:  2px  solid black;*/
@@ -124,20 +130,25 @@ body {
     align-items: center;
     gap: 1em;
     position: relative;
-    top: 250px;
+    top: 125px;
 }
 .card__header:nth-of-type(2) {
     height: calc(1.5 * var(--container-height));
     width: calc(1.5 * var(--container-width));
     z-index: 2;
+    font-size: 21px;
+}
+.card__header:nth-of-type(2) img {
+    height: calc(1.5 * var(--container-img-height));
+    width: calc(1.5 * var(--container-width));
 }
 .card__header:nth-of-type(1) {
     position: relative;
-    left: 80px;
+    left: 150px;
 }
 .card__header:nth-of-type(3) {
     position: relative;
-    right: 80px;
+    right: 150px;
 }
 /* ------------------------------- 4.2 Main -------------------------------- */
 
@@ -186,11 +197,22 @@ body {
     height: var(--container-height);
     width: var(--container-width);
 }
+
+.card__header:hover {
+    /*transform: scale(1.1);*/
+    rotate: 10deg;
+}
+
+.card__header a {
+    text-decoration: none;
+    color: black;
+}
 .card__main {
     height: var(--container-height);
     width: var(--container-width);
 }
 .card--style {
+    background: white;
     list-style: none;
     box-shadow: 0 5px 35px black ;
     border-radius: 10px;
@@ -226,5 +248,9 @@ body {
     background-image: url("/assets/icons/time.svg");
     background-repeat: no-repeat;
     background-size: 12px;
+}
 
+.nutrientsTabel td{
+ padding-bottom: 10px;
+    padding-right: 1em;
 }

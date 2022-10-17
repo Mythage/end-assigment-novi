@@ -534,10 +534,13 @@ function hmrAcceptRun(bundle, id) {
 },{}],"gLLPy":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 //Import from all created functions
-var _fetchRecipeData = require("./funtions/fetchRecipeData");
+var _fetchRecipeData = require("./functions/fetchRecipeData");
 var _fetchRecipeDataDefault = parcelHelpers.interopDefault(_fetchRecipeData);
+var _randomCardGen = require("./functions/randomCardGen");
+var _randomCardGenDefault = parcelHelpers.interopDefault(_randomCardGen);
+(0, _randomCardGenDefault.default)("cake");
 // Reference to form submit
-const submitForm = document.getElementById("onSubmit");
+const submitForm = document.getElementById("recipeSearchForm");
 // Reference to input fields
 const ingredients = document.getElementById("ingredients-field");
 const mealType = document.getElementById("meal-type-field");
@@ -552,7 +555,7 @@ submitForm.addEventListener("submit", (e)=>{
     (0, _fetchRecipeDataDefault.default)(ingredients.value, mealType.value, cuisineType.value, dietType.value, time.value);
 });
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./funtions/fetchRecipeData":"cUiFb"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./functions/fetchRecipeData":"4FvxE","./functions/randomCardGen":"6elqc"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -582,7 +585,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"cUiFb":[function(require,module,exports) {
+},{}],"4FvxE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _axios = require("axios");
@@ -615,7 +618,7 @@ async function fetchRecipeData(searchQuery, mealType, cuisineType, diet, time) {
         // Store recipe hits to use later in JS
         const arrayOfRecipes = response.data.hits;
         (0, _createRecipeCardDefault.default)(arrayOfRecipes);
-    // Catching error massage and show them in the UI
+    // Catching error message and show them in the UI
     } catch (e) {
         const error = document.getElementById("error-message");
         if (e.response.status === 404) //Execute page not found massage
@@ -626,7 +629,7 @@ async function fetchRecipeData(searchQuery, mealType, cuisineType, diet, time) {
 }
 exports.default = fetchRecipeData;
 
-},{"axios":"jo6P5","./createRecipeCard":"aUuo7","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
+},{"axios":"jo6P5","./createRecipeCard":"ikVUz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 module.exports = require("./lib/axios");
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -3981,7 +3984,7 @@ var utils = require("./../utils");
     return utils.isObject(payload) && payload.isAxiosError === true;
 };
 
-},{"./../utils":"5By4s"}],"aUuo7":[function(require,module,exports) {
+},{"./../utils":"5By4s"}],"ikVUz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 function createRecipeCard(arr) {
@@ -4010,16 +4013,112 @@ function createRecipeCard(arr) {
         const recipeTime = document.createElement("p");
         recipeTime.setAttribute("class", "card--time");
         recipeTime.textContent = `${item.recipe.totalTime} min`;
+        const link = document.createElement("a");
+        let url = new URL(item.recipe.uri);
+        console.log(url.hash);
+        link.setAttribute("href", "recipe");
         // Append li with h3 & img
-        recipeItem.appendChild(recipeImg);
-        recipeItem.appendChild(recipeLabel);
-        recipeItem.appendChild(recipeText);
-        recipeItem.appendChild(recipeTime);
+        recipeItem.appendChild(link);
+        link.appendChild(recipeImg);
+        link.appendChild(recipeLabel);
+        link.appendChild(recipeText);
+        link.appendChild(recipeTime);
         // Append ul with li
         recipeList.appendChild(recipeItem);
     });
 }
 exports.default = createRecipeCard;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6elqc":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _createRecipeCardHeader = require("./createRecipeCardHeader");
+var _createRecipeCardHeaderDefault = parcelHelpers.interopDefault(_createRecipeCardHeader);
+async function randomCardGen(searchQuarry) {
+    //Declaration of input values for API
+    const URI = "https://api.edamam.com";
+    const ENDPOINT = "/api/recipes/v2";
+    const API_KEY = "d9ee381f552a7f704393ade7c82cffc0";
+    const API_ID = "305c6b1f";
+    // if successful then ...
+    try {
+        //fetch data from API with a fallback to NUll for the parameters
+        const response = await (0, _axiosDefault.default).get(URI + ENDPOINT, {
+            params: {
+                type: "public",
+                app_id: API_ID,
+                app_key: API_KEY,
+                q: searchQuarry,
+                random: true
+            }
+        });
+        // Store last three hits in const for later use in different function
+        const arrayOfRecipes = response.data.hits.splice(0, 3);
+        (0, _createRecipeCardHeaderDefault.default)(arrayOfRecipes);
+    // Catching error message and show them in the UI
+    } catch (e) {
+        const error = document.getElementById("error-message");
+        if (e.response.status === 404) //Execute page not found massage
+        error.innerContent = "page not found";
+        else if (e.response.status === 500) //Execute internal server error massage
+        error.innerContent = "internal server error";
+    }
+}
+exports.default = randomCardGen;
+
+},{"axios":"jo6P5","./createRecipeCardHeader":"1klzd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1klzd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function createRecipeCardHeader(arr) {
+    const recipeList = document.getElementById("header-card-one");
+    recipeList.innerHTML = "";
+    recipeList.setAttribute("class", "card--ulStyle container__headerCards full-width");
+    arr.map((item)=>{
+        // Create a list item for each recipe.
+        const recipeItem = document.createElement("section");
+        recipeItem.setAttribute("class", "card__header card--style card__text card__header");
+        // create a H3 element for recipe
+        const recipeLabel = document.createElement("h3");
+        recipeLabel.setAttribute("class", "card--label");
+        if (item.recipe.label.length > 30) recipeLabel.textContent = `${item.recipe.label.slice(0, 30) + "..."}`;
+        else recipeLabel.textContent = `${item.recipe.label}`;
+        //create a img element
+        const recipeImg = document.createElement("img");
+        recipeImg.setAttribute("src", `${item.recipe.image}`);
+        recipeImg.setAttribute("alt", `${item.recipe.label}`);
+        recipeImg.setAttribute("class", "card--img");
+        // Create paragraph text in element
+        const recipeText = document.createElement("p");
+        recipeText.setAttribute("class", "card--label");
+        recipeText.textContent = `${Math.round(item.recipe.calories)} Calories  | ${item.recipe.ingredientLines.length} ingredients  |`;
+        // Create Time Paragraph in element
+        const recipeTime = document.createElement("p");
+        recipeTime.setAttribute("class", "card--time");
+        if (item.recipe.totalTime > 0) recipeTime.textContent = `${item.recipe.totalTime} min`;
+        else recipeTime.textContent = `unknown`;
+        // if(item.recipe.totalTime > 0) {
+        //     console.log(item.recipe.totalTime);
+        //     const recipeTime = document.createElement('p');
+        //     recipeTime.setAttribute('class', 'card--time');
+        //     recipeTime.textContent = `${item.recipe.totalTime} min`
+        // }
+        const link = document.createElement("a");
+        let url = new URL(item.recipe.uri);
+        let recipeId = url.hash.replace("#recipe_", "");
+        link.setAttribute("href", "/pages/recipe-page.html#" + recipeId);
+        // Append li with h3 & img
+        recipeItem.appendChild(link);
+        link.appendChild(recipeImg);
+        link.appendChild(recipeLabel);
+        link.appendChild(recipeText);
+        link.appendChild(recipeTime);
+        // Append ul with li
+        recipeList.appendChild(recipeItem);
+    });
+}
+exports.default = createRecipeCardHeader;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["8TtF2","gLLPy"], "gLLPy", "parcelRequire457f")
 
