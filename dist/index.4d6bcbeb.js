@@ -538,10 +538,11 @@ var _fetchRecipeData = require("./functions/fetchRecipeData");
 var _fetchRecipeDataDefault = parcelHelpers.interopDefault(_fetchRecipeData);
 var _randomCardGen = require("./functions/randomCardGen");
 var _randomCardGenDefault = parcelHelpers.interopDefault(_randomCardGen);
+//function to generate 3 random cards in the header with the searchQuarry cake.
 (0, _randomCardGenDefault.default)("cake");
-// Reference to form submit
+// Reference to form submit for main cards on index page.
 const submitForm = document.getElementById("recipeSearchForm");
-// Reference to input fields
+// Reference to input fields on the index page.
 const ingredients = document.getElementById("ingredients-field");
 const mealType = document.getElementById("meal-type-field");
 const cuisineType = document.getElementById("cuisine-type");
@@ -614,7 +615,6 @@ async function fetchRecipeData(searchQuery, mealType, cuisineType, diet, time) {
                 random: true
             }
         });
-        console.log(response);
         // Store recipe hits to use later in JS
         const arrayOfRecipes = response.data.hits;
         (0, _createRecipeCardDefault.default)(arrayOfRecipes);
