@@ -27,7 +27,6 @@ export default async function fetchRecipeData(searchQuery, mealType, cuisineType
 
             }
         } )
-        console.log(response)
         // Store recipe hits to use later in JS
         const arrayOfRecipes = response.data.hits;
 

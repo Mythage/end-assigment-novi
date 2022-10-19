@@ -143,6 +143,12 @@ body {
   padding: 5px;
 }
 
+.tabel--head {
+  flex-direction: row;
+  gap: 2em;
+  display: flex;
+}
+
 .card--style {
   background: #fff;
   border-radius: 10px;

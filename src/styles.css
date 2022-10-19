@@ -154,6 +154,11 @@ body {
 }
 /* ------------------------------- 3.4 layout recipe page  ----------------------- */
 /* ------------------------------- 3.5 layout Calculator   ----------------------- */
+.tabel--head {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+}
 /* ------------------------------- 4.1 styling cards ----------------------------- */
 .card--style {
     background: white;
