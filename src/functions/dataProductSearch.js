@@ -22,7 +22,8 @@ export default async function dataProductSearch(arr) {
         const tdMaesurementLabel = document.createElement("td");
         tdMaesurementLabel.textContent = 'Gram'
         //creating a checkbox for selecting input row to calculator.
-        const tdCheckbox = document.createElement('input');
+        const tdCheckbox = document.createElement('INPUT');
+        tdCheckbox.setAttribute('id', 'check');
         tdCheckbox.setAttribute('type', 'checkbox');
         tdCheckbox.setAttribute('value', '')
 
