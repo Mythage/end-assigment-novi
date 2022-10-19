@@ -20,11 +20,11 @@ export default async function fetchFoodParser(searchQuarry){
                 // upc: searchQuarry || null
             }
         })
-        console.log(response)
 
         //place the Hits in const for use in function elsewhere.
         const arrayOfPruducts = response.data.hints;
         dataProductSearch(arrayOfPruducts);
+
     } catch (e){
     const error = document.getElementById('error-message');
 
