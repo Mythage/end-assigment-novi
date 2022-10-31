@@ -17,38 +17,21 @@ export default async function createRecipePage(recipe) {
     nutrientSoduim.innerHTML =`${Math.round(recipe.totalNutrients.NA.quantity)}`
 
     //creating the const for getting the required elements that need to be filled with API data.
-    const recipeLabel = document.getElementById('recipeLabel');
-    recipeLabel.setAttribute('class', '');
+    const recipeTitel = document.getElementById('recipeName');
+    recipeTitel.textContent = recipe.label;
 
-    const healthAndNutrients = document.getElementById('healthAndNutrients');
-    healthAndNutrients.setAttribute('class', '')
-
-    const recipeInfo = document.getElementById('recipeInfo');
-    recipeInfo.setAttribute('class', '');
-
-    const recipeImg = document.getElementById('img-container');
-    recipeInfo.setAttribute('class', '');
+    const img = document.getElementById('recipeImg');
 
     //creating the elements for the page and fill them with data.
-    const recipeTitle = document.createElement('h1');
-    recipeTitle.textContent = recipe.label;
-
     const coverImg = document.createElement('img');
     coverImg.setAttribute('src', `${ recipe.image }`);
     coverImg.setAttribute('alt', `${ recipe.label }`);
 
-    const ingredientsTag = document.createElement('h4');
-    ingredientsTag.innerHTML = 'ingredients';
-
-    const healthLabelTag = document.createElement('h4');
-    healthLabelTag.textContent = 'Health labels';
-
 // linking the elements to one and other.
-    recipeLabel.appendChild(recipeTitle);
-    recipeImg.appendChild(coverImg);
-    recipeInfo.appendChild(ingredientsTag);
-    healthAndNutrients.appendChild(healthLabelTag);
-    recipeInfo.appendChild(ArrToList(recipe));
+    img.appendChild(coverImg);
+
+    //call for function that makes the ingredient list and Nutrients tabel
+    ArrToList(recipe);
 }
 
 //A function that takes the array of a object location in the APi to make a list from it.
@@ -58,32 +41,32 @@ function ArrToList(i){
     const ingerdientArr = i.ingredientLines;
     ingerdientArr.forEach(function (item){
 
+        const recipeIngredient = document.getElementById('ingredientList');
+
         const listIngerdient = document.createElement('li');
         listIngerdient.textContent = item;
-
-        const recipeInfo = document.getElementById('recipeInfo');
-        recipeInfo.setAttribute('class', '');
 
         const ingredients = document.createElement("ul");
         ingredients.textContent = "";
 
         ingredients.appendChild(listIngerdient)
-        recipeInfo.appendChild(ingredients)
+        recipeIngredient.appendChild(ingredients)
     });
 
     //Mapping through the array and creating the list for the health labels within the Function.
-    const healthArr = i.healthLabels;
-    healthArr.forEach(function (item){
+    const healthLabelArr = i.healthLabels;
+    healthLabelArr.forEach(function (item){
+
+        const healthLabels = document.getElementById('healthAndNutrients');
+        healthLabels.setAttribute('class', 'label__list');
 
         const healthLabel = document.createElement('li');
         healthLabel.setAttribute('class', 'button button--health')
         healthLabel.textContent = item;
 
         const listHealthLabel = document.createElement('ul');
+        listHealthLabel.setAttribute('class', '')
         listHealthLabel.textContent = "";
-
-        const healthLabels = document.getElementById('healthAndNutrients');
-        healthLabels.setAttribute('class', '');
 
         listHealthLabel.appendChild(healthLabel);
         healthLabels.appendChild(listHealthLabel);

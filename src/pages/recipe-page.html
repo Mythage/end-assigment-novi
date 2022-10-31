@@ -20,49 +20,58 @@
         </nav>
     </div>
 </header>
-<main class="outer-container">
-    <div class="recipePageLayout">
-        <article id="recipe">
-            <div id="img-container" class=""></div>
-            <section id="recipeLabel" class=""></section>
-            <section id="recipeInfo" class=""></section>
-            <section id="healthAndNutrients" class=""></section>
-            <section class="item-f">
+<main class="titel--styling">
+    <div class="outer-container">
+        <article class="inner-container full-width">
+            <h1 id="recipeName">loading</h1>
+            <section class="inner-container container__recipe-info">
+                <div id="ingredientList">
+                    <h4>Ingredients</h4>
+                </div>
+                <div id="recipeImg"></div>
+            </section>
+        </article>
+            <article class="inner-container full-width container__health-labels-nutrients">
+            <section id="healthAndNutrients">
+                <h4 class="full-width">Health labels</h4>
+            </section>
+            <section>
                 <table class="nutrientsTabel">
+                    <tr><th>Nutrients</th></tr>
                     <tr>
                         <td>Energy</td>
-                        <td id="energy">test</td>
+                        <td id="energy"></td>
                         <td>kcal</td>
                     </tr>
                     <tr>
                         <td>Fat</td>
-                        <td id="fat">test</td>
+                        <td id="fat"></td>
                         <td>g</td>
                     </tr>
                     <tr>
                         <td>Carbs</td>
-                        <td id="carbs">test</td>
+                        <td id="carbs"></td>
                         <td>g</td>
                     </tr>
                     <tr>
                         <td>Suger</td>
-                        <td id="suger">test</td>
+                        <td id="suger"></td>
                         <td>g</td>
                     </tr>
                     <tr>
                         <td>Protein</td>
-                        <td id="protein">test</td>
+                        <td id="protein"></td>
                         <td>g</td>
                     </tr>
                     <tr>
                         <td>Soduim</td>
-                        <td id="soduim">test</td>
+                        <td id="soduim"></td>
                         <td>mg</td>
                     </tr>
                 </table>
             </section>
         </article>
-        <article class="full-width ">
+        <article class="inner-container full-width ">
             <h2>Preparation method</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolorum enim obcaecati soluta.
                 Architecto asperiores, beatae consectetur culpa cum cumque dicta doloremque doloribus est, eum laudantium
@@ -77,7 +86,7 @@
                 voluptas. Cumque, eius exercitationem iusto placeat praesentium voluptate voluptatem. Libero, veniam.</p>
         </article>
     </div>
-
+<p id="error-massage"></p>
 </main>
 <footer class="outer-container footerStyling ">
     <article class="container-footer full-width ">

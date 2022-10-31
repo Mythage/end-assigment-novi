@@ -12,6 +12,15 @@
   --background-drk-blue: #283e53;
 }
 
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: inside;
+}
+
 body {
   font-family: poppins, sans-serif;
 }
@@ -143,10 +152,33 @@ body {
   padding: 5px;
 }
 
-.tabel--head {
+.container__health-labels-nutrients {
   flex-direction: row;
-  gap: 2em;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1em;
   display: flex;
+}
+
+.label__list {
+  max-width: 45%;
+  flex-flow: wrap;
+  display: flex;
+}
+
+.label__list ul {
+  margin: 2px 10px 2px 0;
+}
+
+.container__recipe-info {
+  flex-direction: row;
+  margin-top: 2em;
+  display: flex;
+}
+
+.titel--styling h1 {
+  margin-top: 2em;
+  margin-bottom: 1em;
 }
 
 .card--style {
@@ -223,11 +255,6 @@ body {
   rotate: 10deg;
 }
 
-.card__header a {
-  color: #000;
-  text-decoration: none;
-}
-
 .card__main {
   height: var(--container-height);
   width: var(--container-width);
@@ -237,7 +264,7 @@ body {
   background: var(--Button);
   width: -moz-fit-content;
   width: fit-content;
-  padding: 5px;
+  padding: 3px;
   list-style: none;
 }
 
@@ -248,12 +275,22 @@ body {
 
 .button--health {
   border: 1px solid #000;
-  border-radius: 10px;
+  border-radius: 15px;
+}
+
+.tabel--head {
+  flex-direction: row;
+  gap: 2em;
+  display: flex;
 }
 
 .nutrientsTabel td {
   padding-bottom: 10px;
   padding-right: 1em;
+}
+
+.nutrientsTabel th {
+  padding-bottom: 15px;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */

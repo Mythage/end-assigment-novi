@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="/assets/fonts/fonts.css">
     <script defer src="/src/functions/fetchDataCalculator.js" type="module"></script>
-    <script defer src="/src/functions/productToListCalculator.js" type="module"></script>
+    <script defer src="/src/functions/Test.js" type="module"></script>
 </head>
 <body>
 <header>
@@ -21,14 +21,14 @@
         </nav>
     </div>
 </header>
-<main class="">
-    <div class="">
+<main class="outer-container">
+    <div class="inner-container">
         <h1>Calorie Calculator</h1>
         <form id="calorieFrom">
             <label for="product-field">
                 <input type="text" id="product-field" placeholder="Barcode / product">
             </label>
-            <button type="submit">Search</button>
+            <button type="submit" class="button button--submit">Search</button>
         </form>
         <table id="productTabelList">
             <thead>
@@ -46,7 +46,7 @@
                 <input type="text" id="amount-of-servings">
             </label>
             <label>Serving's</label>
-            <button type="submit">+ Add</button>
+            <button type="submit"class="button button--submit">+ Add</button>
         </form>
         <table id="productListCalculator">
             <thead>
