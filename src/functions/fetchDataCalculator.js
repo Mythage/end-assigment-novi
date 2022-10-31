@@ -25,8 +25,6 @@ export default async function fetchFoodParser(searchQuarry){
         //place the Hits in const for use in function elsewhere.
         const arrayOfPruducts = response.data.hints;
         createProductList(arrayOfPruducts);
-        console.log(arrayOfPruducts())
-
 
         // then we transform the data
         return response.data.hints.map(({ food, measures }, i) => ({

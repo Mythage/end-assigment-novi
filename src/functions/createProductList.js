@@ -1,6 +1,6 @@
 export async function createProductList(arr) {
 
-
+    console.log(arr)
     //getting the tabel elements from the html page.
     const tbl = document.getElementById('productTabelList');
     const tblBody = document.getElementById("tbody");

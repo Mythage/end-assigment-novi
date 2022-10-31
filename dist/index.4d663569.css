@@ -17,6 +17,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: inside;
+}
+
 body {
   font-family: poppins, sans-serif;
 }
@@ -155,10 +159,14 @@ body {
   display: flex;
 }
 
-.tabel--head {
-  flex-direction: row;
-  gap: 2em;
+.label__list {
+  max-width: 45%;
+  flex-flow: wrap;
   display: flex;
+}
+
+.label__list ul {
+  margin: 2px 10px 2px 0;
 }
 
 .card--style {
@@ -244,7 +252,7 @@ body {
   background: var(--Button);
   width: -moz-fit-content;
   width: fit-content;
-  padding: 5px;
+  padding: 3px;
   list-style: none;
 }
 
@@ -255,12 +263,22 @@ body {
 
 .button--health {
   border: 1px solid #000;
-  border-radius: 10px;
+  border-radius: 15px;
+}
+
+.tabel--head {
+  flex-direction: row;
+  gap: 2em;
+  display: flex;
 }
 
 .nutrientsTabel td {
   padding-bottom: 10px;
   padding-right: 1em;
+}
+
+.nutrientsTabel th {
+  padding-bottom: 15px;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */

@@ -20,19 +20,17 @@ export default async function fetchRecipe(recipeId) {
                 app_key: API_KEY,
             }
         } )
-               //function for recipe page
-        createRecipePage(response.data.recipe);
-
-        // Catching error message and show them in the UI
+        //function for recipe page
+        await createRecipePage(response.data.recipe);
+         // Catching error message and show them in the UI
     } catch (e) {
         const error = document.getElementById('error-message')
-
         if (e.response.status === 404) {
             //Execute page not found massage
-            error.innerContent = 'page not found'
+            error.innerHTML = 'page not found'
         } else if (e.response.status === 500) {
             //Execute internal server error massage
-            error.innerContent = 'internal server error'
+            error.innerHTML = 'internal server error'
         }
     }
 }

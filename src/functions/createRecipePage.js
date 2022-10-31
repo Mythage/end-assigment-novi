@@ -38,6 +38,7 @@ export default async function createRecipePage(recipe) {
     ingredientsTag.innerHTML = 'ingredients';
 
     const healthLabelTag = document.createElement('h4');
+    healthLabelTag.setAttribute('class', 'full-width')
     healthLabelTag.textContent = 'Health labels';
 
 // linking the elements to one and other.
@@ -77,10 +78,11 @@ function ArrToList(i){
         healthLabel.textContent = item;
 
         const listHealthLabel = document.createElement('ul');
+        listHealthLabel.setAttribute('class', '')
         listHealthLabel.textContent = "";
 
         const healthLabels = document.getElementById('healthAndNutrients');
-        healthLabels.setAttribute('class', '');
+        healthLabels.setAttribute('class', 'label__list');
 
         listHealthLabel.appendChild(healthLabel);
         healthLabels.appendChild(listHealthLabel);
