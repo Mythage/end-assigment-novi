@@ -152,10 +152,11 @@ body {
   padding: 5px;
 }
 
-.container__health-labels {
+.container__health-labels-nutrients {
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 1em;
   display: flex;
 }
 
@@ -167,6 +168,17 @@ body {
 
 .label__list ul {
   margin: 2px 10px 2px 0;
+}
+
+.container__recipe-info {
+  flex-direction: row;
+  margin-top: 2em;
+  display: flex;
+}
+
+.titel--styling h1 {
+  margin-top: 2em;
+  margin-bottom: 1em;
 }
 
 .card--style {

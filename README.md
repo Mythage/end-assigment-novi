@@ -4,7 +4,7 @@
 
 1. [Introduction](#Introducion)
 2. [Requirements](#Requirements)
-3. [Installation instructions](#Installation instructions)
+3. [instructions](#Installation)
 
 
 ## Introduction
