@@ -5,9 +5,8 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="/assets/fonts/fonts.css">
-    <script defer src="/src/functions/retrieveProducts.js" type="module"></script>
-    <script defer src="/src/functions/dataProductSearch.js" type="module"></script>
-<!--    <script defer src="/src/functions/productToListCalculator.js" type="module"></script>-->
+    <script defer src="/src/functions/fetchDataCalculator.js" type="module"></script>
+    <script defer src="/src/functions/productToListCalculator.js" type="module"></script>
 </head>
 <body>
 <header>
@@ -22,44 +21,45 @@
         </nav>
     </div>
 </header>
-<main class="outer-container">
-    <div class="inner-container full-width">
+<main class="">
+    <div class="">
         <h1>Calorie Calculator</h1>
         <form id="calorieFrom">
             <label for="product-field">
                 <input type="text" id="product-field" placeholder="Barcode / product">
             </label>
-            <button type="submit" class="button button--submit">Search</button>
-            <table id="productTabelList">
-                <thead>
-                <tr class="tabel--head">
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Label</th>
-                </tr>
-                </thead>
-<!--                here will be all the items-->
-                <tbody id="tbody">
-                </tbody>
-            </table>
+            <button type="submit">Search</button>
+        </form>
+        <table id="productTabelList">
+            <thead>
+            <tr class="tabel--head">
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Label</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+        <form id="add-product-serving-to-list">
             <label for="amount-of-servings">Amount
                 <input type="text" id="amount-of-servings">
             </label>
             <label>Serving's</label>
-            <button id="check" type="submit" class="button button--submit">+ Add</button>
-            <table id="productListCalculator">
-                <thead>
-                <tr class="tabel--head">
-                    <th>Product</th>
-                    <th>Calories</th>
-                    <th>Fat</th>
-                    <th>Carbs</th>
-                </tr>
-                </thead>
-                <tbody id="calculatorList">
-                </tbody>
-            </table>
+            <button type="submit">+ Add</button>
         </form>
+        <table id="productListCalculator">
+            <thead>
+            <tr class="tabel--head">
+                <th>Product</th>
+                <th>Calories</th>
+                <th>Fat</th>
+                <th>Carbs</th>
+            </tr>
+            </thead>
+            <tbody id="calculatorList">
+            </tbody>
+        </table>
     </div>
 </main>
 <footer class="outer-container footerStyling ">
