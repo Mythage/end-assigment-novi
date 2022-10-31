@@ -9,6 +9,7 @@ export default async function dataProductSearch(arr) {
 
         // creating a tabel row
         const row = document.createElement("tr");
+        row.innerHTML += `<input  id="${ item.food.foodId }" name="product" class="radio" type="radio"/>`
 
         //creating product label.
         const tdProduct = document.createElement("td");
@@ -21,16 +22,10 @@ export default async function dataProductSearch(arr) {
         //creating product measurement label.
         const tdMaesurementLabel = document.createElement("td");
         tdMaesurementLabel.textContent = 'Gram'
-        //creating a checkbox for selecting input row to calculator.
-        const tdCheckbox = document.createElement('INPUT');
-        tdCheckbox.setAttribute('id', 'check');
-        tdCheckbox.setAttribute('type', 'checkbox');
-        tdCheckbox.setAttribute('value', '')
 
         row.appendChild(tdProduct);
         row.appendChild(tdQuantity);
         row.appendChild(tdMaesurementLabel);
-        row.appendChild(tdCheckbox);
         tblBody.appendChild(row);
         tbl.appendChild(tblBody);
     })
