@@ -31,6 +31,10 @@
     --Button: #70b6be;
     --background-drk-blue: #283e53;
 }
+a {
+    text-decoration: none;
+    color: black;
+}
 /* ------------------------------- 2. Typography --------------------------------- */
 body {
     font-family: poppins, sans-serif;
@@ -153,6 +157,13 @@ body {
     margin: 10px;
 }
 /* ------------------------------- 3.4 layout recipe page  ----------------------- */
+
+.container__health-labels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 /* ------------------------------- 3.5 layout Calculator   ----------------------- */
 .tabel--head {
     display: flex;
@@ -226,15 +237,12 @@ body {
     /*transform: scale(1.1);*/
     rotate: 10deg;
 }
-.card__header a {
-    text-decoration: none;
-    color: black;
-}
 /* ------------------------------- 4.1.2 styling Main cards ----------------------- */
 .card__main {
     height: var(--container-height);
     width: var(--container-width);
 }
+
 /* ------------------------------- 4.2 styling buttons ---------------------------- */
 .button {
     list-style: none;
