@@ -1,6 +1,6 @@
 //function to get ingredient or food from API database
 import axios from "axios";
-import dataProductSearch from "./dataProductSearch";
+import {createProductList} from "./createProductList";
 
 export default async function fetchFoodParser(searchQuarry){
 
@@ -10,7 +10,7 @@ export default async function fetchFoodParser(searchQuarry){
     const API_KEY = "0f2d7f3b71b7cbba944b9c705f77c14b";
     const API_ID = "0f345a3a";
 
-    //if successfully then...
+    //if successfully then extract
     try{
         const response = await axios.get(URI + ENTPOINT,{
             params:{
@@ -21,9 +21,21 @@ export default async function fetchFoodParser(searchQuarry){
             }
         })
 
+
         //place the Hits in const for use in function elsewhere.
         const arrayOfPruducts = response.data.hints;
-        dataProductSearch(arrayOfPruducts);
+        createProductList(arrayOfPruducts);
+        console.log(arrayOfPruducts())
+
+
+        // then we transform the data
+        return response.data.hints.map(({ food, measures }, i) => ({
+            id: i,
+            product: food.label,
+            quantity: measures[0].weight,
+            measurement: 'gram'
+
+        }))
 
     } catch (e){
     const error = document.getElementById('error-message');

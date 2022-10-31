@@ -20,12 +20,7 @@ export default async function fetchRecipe(recipeId) {
                 app_key: API_KEY,
             }
         } )
-       // console.log(response)
-        // Store recipe hits to use later in JS
-        //const arrayOfRecipes = response.data.hits;
-
-
-        //function for recipe page
+               //function for recipe page
         createRecipePage(response.data.recipe);
 
         // Catching error message and show them in the UI

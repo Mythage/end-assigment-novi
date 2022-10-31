@@ -1,4 +1,4 @@
-export default async function dataProductSearch(arr) {
+export async function createProductList(arr) {
 
 
     //getting the tabel elements from the html page.
@@ -15,6 +15,9 @@ export default async function dataProductSearch(arr) {
         const tdProduct = document.createElement("td");
         if (item.food.label.length > 10) {
             tdProduct.textContent = `${item.food.label.split(',', 1)}`
+            if (item.food.label.length > 25){
+                tdProduct.textContent = `${item.food.label.slice(0,25) + '...'}`
+            }
         } else tdProduct.textContent = `${item.food.label}`
         //creating product Quantity.
         const tdQuantity = document.createElement("td");
