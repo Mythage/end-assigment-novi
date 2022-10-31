@@ -24,10 +24,7 @@ export default async function createRecipePage(recipe) {
     healthAndNutrients.setAttribute('class', '')
 
     const recipeInfo = document.getElementById('recipeInfo');
-    recipeInfo.setAttribute('class', '');
-
-    const recipeImg = document.getElementById('img-container');
-    recipeInfo.setAttribute('class', '');
+    recipeInfo.setAttribute('class', 'container--top-recipe-page');
 
     //creating the elements for the page and fill them with data.
     const recipeTitle = document.createElement('h1');
@@ -45,7 +42,7 @@ export default async function createRecipePage(recipe) {
 
 // linking the elements to one and other.
     recipeLabel.appendChild(recipeTitle);
-    recipeImg.appendChild(coverImg);
+    recipeInfo.appendChild(coverImg);
     recipeInfo.appendChild(ingredientsTag);
     healthAndNutrients.appendChild(healthLabelTag);
     recipeInfo.appendChild(ArrToList(recipe));

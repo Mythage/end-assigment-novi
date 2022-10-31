@@ -5,7 +5,9 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="/assets/fonts/fonts.css">
-    <script defer src="/src/functions/fetchDataCalculator.js" type="module"></script>
+    <script defer src="/src/functions/retrieveProducts.js" type="module"></script>
+    <script defer src="/src/functions/dataProductSearch.js" type="module"></script>
+<!--    <script defer src="/src/functions/productToListCalculator.js" type="module"></script>-->
 </head>
 <body>
 <header>
@@ -20,28 +22,45 @@
         </nav>
     </div>
 </header>
-<main class="">
-<div class="">
-    <h1>Calorie Calculator</h1>
-    <form id="calorieFrom">
-        <label for="product-field">
-            <input type="text" id="product-field" placeholder="Barcode / product">
-        </label>
-        <button type="submit">Search</button>
-    </form>
-    <table id="productTabelList">
-        <thead>
-            <tr class="tabel--head">
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Label</th>
-            </tr>
-        </thead>
-        <tbody id="">
-
-        </tbody>
-    </table>
-</div>
+<main class="outer-container">
+    <div class="inner-container full-width">
+        <h1>Calorie Calculator</h1>
+        <form id="calorieFrom">
+            <label for="product-field">
+                <input type="text" id="product-field" placeholder="Barcode / product">
+            </label>
+            <button type="submit" class="button button--submit">Search</button>
+            <table id="productTabelList">
+                <thead>
+                <tr class="tabel--head">
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Label</th>
+                </tr>
+                </thead>
+<!--                here will be all the items-->
+                <tbody id="tbody">
+                </tbody>
+            </table>
+            <label for="amount-of-servings">Amount
+                <input type="text" id="amount-of-servings">
+            </label>
+            <label>Serving's</label>
+            <button id="check" type="submit" class="button button--submit">+ Add</button>
+            <table id="productListCalculator">
+                <thead>
+                <tr class="tabel--head">
+                    <th>Product</th>
+                    <th>Calories</th>
+                    <th>Fat</th>
+                    <th>Carbs</th>
+                </tr>
+                </thead>
+                <tbody id="calculatorList">
+                </tbody>
+            </table>
+        </form>
+    </div>
 </main>
 <footer class="outer-container footerStyling ">
     <article class="container-footer full-width ">
