@@ -25,6 +25,7 @@ export default async function createRecipePage(recipe) {
     const coverImg = document.createElement('img');
     coverImg.setAttribute('src', `${ recipe.image }`);
     coverImg.setAttribute('alt', `${ recipe.label }`);
+    coverImg.setAttribute('class', 'recipe--img')
 // linking the elements to one and other.
     img.appendChild(coverImg);
 

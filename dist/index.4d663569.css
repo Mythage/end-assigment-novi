@@ -171,7 +171,6 @@ body {
 }
 
 .container__recipe-info {
-  outline: 2px solid red;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 2em;
@@ -181,6 +180,12 @@ body {
 .titel--styling h1 {
   margin-top: 2em;
   margin-bottom: 1em;
+}
+
+.recipe--img {
+  border: 3px solid #2f4f4f;
+  border-radius: 50%;
+  box-shadow: 5px 5px 15px gray;
 }
 
 .card--style {

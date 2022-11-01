@@ -1,10 +1,15 @@
-export function addRowtoTable(table, products, selector) {
+export function addProductsToTable(table, products, selector) {
     const filteredProducts = selector !== undefined ? products.filter(selector) : products
-    const body = table.getElementsByTagName('tbody')[0]
-    body.innerHtml = ""
+    console.log(products)
+    const tbody = table.getElementsByTagName('tbody')[0]
+    tbody.innerHTML = ""
     for (const product of filteredProducts) {
         const row = document.createElement("tr")
-        row.innerHTML += `<input  value="${ product.foodId }" name="product" class="radio" type="radio"/>`
+        const input  = document.createElement("input")
+        input.setAttribute('value', product.foodId )
+        input.setAttribute('name', 'product')
+        input.setAttribute('type', 'radio')
+       // row.innerHTML += `<input  value="${ product.foodId }" name="product" class="radio" type="radio"/>`
 
         //creating product label.
         const tdProduct = document.createElement("td");
@@ -21,10 +26,13 @@ export function addRowtoTable(table, products, selector) {
         const tdMaesurementLabel = document.createElement("td");
         tdMaesurementLabel.textContent = 'Gram'
 
+        const tdInput = document.createElement("td");
+        tdInput.appendChild(input)
+        row.appendChild(tdInput);
         row.appendChild(tdProduct);
         row.appendChild(tdQuantity);
         row.appendChild(tdMaesurementLabel);
-        body.appendChild(row);
-        table.appendChild(body);
+        tbody.appendChild(row);
+        table.appendChild(tbody);
     }
 }

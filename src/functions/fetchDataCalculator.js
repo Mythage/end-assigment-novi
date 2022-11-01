@@ -1,16 +1,19 @@
 //function to get ingredient or food from API database
-import {addRowtoTable} from "./createProductList";
+import {addProductsToTable} from "./createProductList";
 import {retrieveProducts} from "./retrieveProducts";
 
-async function fetchFoodParser(searchQuarry){
+let products = [];
+
+async function fetchFoodParser(searchQuery){
 
     //if successfully then extract
     try {
 
+
         //place the Hits in const for use in function elsewhere.
-        const table = document.getElementById("productTabelList")
-        const products = await retrieveProducts(searchQuarry)
-        addRowtoTable(table, products)
+       const table = document.getElementById("productTabelList")
+        products = await retrieveProducts(searchQuery)
+        addProductsToTable(table, products)
 
     } catch (e) {
         console.error(e)
@@ -27,4 +30,23 @@ productSearch.addEventListener('submit', (e) =>{
     //prevent from to auto submit.
     e.preventDefault();
     fetchFoodParser(product.value);
+})
+
+const chosenProducts = [];
+
+const addToCalculator = document.getElementById('amount-of-servings-button');
+addToCalculator.addEventListener('click', (e) =>{
+    //prevent from to auto submit.
+    e.preventDefault();
+    const chosenProduct = document.querySelector('input[name="product"]:checked');
+    const amount = document.getElementById('amount-of-servings');
+    if(chosenProduct && amount.value) {
+
+        products.forEach(function(foodItem) {
+            if(foodItem.foodId === chosenProduct.value) {
+                chosenProducts.push({'food':foodItem, 'amount': amount.value });
+            }
+        })
+        console.log(chosenProducts);
+    }
 })
