@@ -20,21 +20,19 @@ export default async function createRecipePage(recipe) {
     const recipeTitel = document.getElementById('recipeName');
     recipeTitel.textContent = recipe.label;
 
-    const img = document.getElementById('recipeImg');
-
     //creating the elements for the page and fill them with data.
+    const img = document.getElementById('recipeImg');
     const coverImg = document.createElement('img');
     coverImg.setAttribute('src', `${ recipe.image }`);
     coverImg.setAttribute('alt', `${ recipe.label }`);
-
 // linking the elements to one and other.
     img.appendChild(coverImg);
+
 
     //call for function that makes the ingredient list and Nutrients tabel
     ArrToList(recipe);
 }
-
-//A function that takes the array of a object location in the APi to make a list from it.
+//A function that takes the array of an object location in the APi to make a list from it.
 function ArrToList(i){
 
     // Mapping through the array and creating the list for the ingredients within the Function.

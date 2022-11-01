@@ -1,32 +1,20 @@
 //function to get ingredient or food from API database
 import {addRowtoTable} from "./createProductList";
-import {retrieveProducts} from "./Test";
+import {retrieveProducts} from "./retrieveProducts";
 
-export default async function fetchFoodParser(searchQuarry){
-
-
+async function fetchFoodParser(searchQuarry){
 
     //if successfully then extract
-    try{
+    try {
 
         //place the Hits in const for use in function elsewhere.
-        const products = await retrieveProducts(searchQuarry)
-
         const table = document.getElementById("productTabelList")
+        const products = await retrieveProducts(searchQuarry)
         addRowtoTable(table, products)
 
-    } catch (e){
-    const error = document.getElementById('error-message');
-    console.error(e)
-    // if (e.response.status === 404) {
-    //     //Execute page not found massage
-    //     error.innerContent = 'page not found'
-    // } else if (e.response.status === 500) {
-    //     //Execute internal server error massage
-    //     error.innerContent = 'internal server error'
-    // }
-}
-
+    } catch (e) {
+        console.error(e)
+    }
 }
 //reference to from element on the calculator page.
 const productSearch = document.getElementById('calorieFrom');
@@ -38,6 +26,5 @@ const product = document.getElementById('product-field');
 productSearch.addEventListener('submit', (e) =>{
     //prevent from to auto submit.
     e.preventDefault();
-
     fetchFoodParser(product.value);
 })

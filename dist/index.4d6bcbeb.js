@@ -536,10 +536,10 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 //Import from all created functions
 var _fetchRecipeData = require("./functions/fetchRecipeData");
 var _fetchRecipeDataDefault = parcelHelpers.interopDefault(_fetchRecipeData);
-var _randomCardGen = require("./functions/randomCardGen");
-var _randomCardGenDefault = parcelHelpers.interopDefault(_randomCardGen);
+var _headerCardGen = require("./functions/headerCardGen");
+var _headerCardGenDefault = parcelHelpers.interopDefault(_headerCardGen);
 //function to generate 3 random cards in the header with the searchQuarry cake.
-(0, _randomCardGenDefault.default)("cake");
+(0, _headerCardGenDefault.default)("cake");
 // Reference to form submit for main cards on index page.
 const submitForm = document.getElementById("recipeSearchForm");
 // Reference to input fields on the index page.
@@ -556,19 +556,49 @@ submitForm.addEventListener("submit", (e)=>{
     (0, _fetchRecipeDataDefault.default)(ingredients.value, mealType.value, cuisineType.value, dietType.value, time.value);
 });
 
-},{"./functions/fetchRecipeData":"4FvxE","./functions/randomCardGen":"6elqc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4FvxE":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./functions/fetchRecipeData":"4FvxE","./functions/headerCardGen":"bi2IQ"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"4FvxE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _createRecipeCard = require("./createRecipeCard");
 var _createRecipeCardDefault = parcelHelpers.interopDefault(_createRecipeCard);
+//Declaration of input values for API
+const URI = "https://api.edamam.com";
+const ENDPOINT = "/api/recipes/v2";
+const API_KEY = "d9ee381f552a7f704393ade7c82cffc0";
+const API_ID = "305c6b1f";
 async function fetchRecipeData(searchQuery, mealType, cuisineType, diet, time) {
-    //Declaration of input values for API
-    const URI = "https://api.edamam.com";
-    const ENDPOINT = "/api/recipes/v2";
-    const API_KEY = "d9ee381f552a7f704393ade7c82cffc0";
-    const API_ID = "305c6b1f";
     // if successful then ...
     try {
         //fetch data from API with a fallback to NUll for the parameters
@@ -4005,44 +4035,14 @@ function createRecipeCard(arr) {
 }
 exports.default = createRecipeCard;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"6elqc":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bi2IQ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _createRecipeCardHeader = require("./createRecipeCardHeader");
 var _createRecipeCardHeaderDefault = parcelHelpers.interopDefault(_createRecipeCardHeader);
-async function randomCardGen(searchQuarry) {
+async function headerCardGen(searchQuarry) {
     //Declaration of input values for API
     const URI = "https://api.edamam.com";
     const ENDPOINT = "/api/recipes/v2";
@@ -4072,7 +4072,7 @@ async function randomCardGen(searchQuarry) {
         error.innerContent = "internal server error";
     }
 }
-exports.default = randomCardGen;
+exports.default = headerCardGen;
 
 },{"axios":"jo6P5","./createRecipeCardHeader":"1klzd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1klzd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

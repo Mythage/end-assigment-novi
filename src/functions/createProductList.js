@@ -1,4 +1,3 @@
-
 export function addRowtoTable(table, products, selector) {
     const filteredProducts = selector !== undefined ? products.filter(selector) : products
     const body = table.getElementsByTagName('tbody')[0]
