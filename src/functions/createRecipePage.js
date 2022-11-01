@@ -1,6 +1,6 @@
 // Try Fetching data from Edaman API
 export default async function createRecipePage(recipe) {
-    console.log(recipe);
+    // console.log(recipe);
 
     //all information for filling the Nutrients tabel on the page.
     const nutrientEngery = document.getElementById('energy');
