@@ -1,10 +1,10 @@
 
 //Import from all created functions
 import fetchRecipeData from "./functions/fetchRecipeData";
-import randomCardGen from "./functions/randomCardGen";
+import headerCardGen from "./functions/headerCardGen";
 
 //function to generate 3 random cards in the header with the searchQuarry cake.
-randomCardGen('cake')
+headerCardGen('cake')
 
     // Reference to form submit for main cards on index page.
     const submitForm = document.getElementById('recipeSearchForm');

@@ -3,7 +3,7 @@ import createRecipeCardHeader from "./createRecipeCardHeader";
 
 
 // Try Fetching data from Edaman API
- export default async function randomCardGen( searchQuarry ) {
+ export default async function headerCardGen(searchQuarry ) {
 
     //Declaration of input values for API
     const URI = "https://api.edamam.com";
