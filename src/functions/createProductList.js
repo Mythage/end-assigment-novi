@@ -9,7 +9,6 @@ export function addProductsToTable(table, products, selector) {
         input.setAttribute('value', product.foodId )
         input.setAttribute('name', 'product')
         input.setAttribute('type', 'radio')
-       // row.innerHTML += `<input  value="${ product.foodId }" name="product" class="radio" type="radio"/>`
 
         //creating product label.
         const tdProduct = document.createElement("td");
