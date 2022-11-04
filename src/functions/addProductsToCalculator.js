@@ -1,7 +1,6 @@
 export function addProductsToCalculator(table, products, selector) {
     const filteredProducts = selector !== undefined ? products.filter(selector) : products
     console.log(products)
-    console.log(products.food.nutrients)
     const body = table.getElementsByTagName('tbody')[0]
     body.innerHTML = ""
     for (const product of filteredProducts){
