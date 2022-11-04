@@ -1,10 +1,14 @@
-export function addRowtoTable(table, products, selector) {
+export function addProductsToTable(table, products, selector) {
     const filteredProducts = selector !== undefined ? products.filter(selector) : products
-    const body = table.getElementsByTagName('tbody')[0]
-    body.innerHtml = ""
+    console.log(products)
+    const tbody = table.getElementsByTagName('tbody')[0]
+    tbody.innerHTML = ""
     for (const product of filteredProducts) {
-        const row = document.createElement("tr")
-        row.innerHTML += `<input  value="${ product.foodId }" name="product" class="radio" type="radio"/>`
+        const row = document.createElement("tr");
+        const input  = document.createElement("input");
+        input.setAttribute('value', product.foodId );
+        input.setAttribute('name', 'product');
+        input.setAttribute('type', 'radio');
 
         //creating product label.
         const tdProduct = document.createElement("td");
@@ -13,18 +17,21 @@ export function addRowtoTable(table, products, selector) {
             if (product.product.length > 25){
                 tdProduct.textContent = `${product.product.slice(0,25) + '...'}`
             }
-        } else tdProduct.textContent = `${product.product}`
+        } else tdProduct.textContent = `${product.product}`;
         //creating product Quantity.
         const tdQuantity = document.createElement("td");
-        tdQuantity.textContent = `${Math.round(product.quantity)}`
+        tdQuantity.textContent = `${Math.round(product.quantity)}`;
         //creating product measurement label.
         const tdMaesurementLabel = document.createElement("td");
         tdMaesurementLabel.textContent = 'Gram'
 
+        const tdInput = document.createElement("td");
+        tdInput.appendChild(input)
+        row.appendChild(tdInput);
         row.appendChild(tdProduct);
         row.appendChild(tdQuantity);
         row.appendChild(tdMaesurementLabel);
-        body.appendChild(row);
-        table.appendChild(body);
+        tbody.appendChild(row);
+        table.appendChild(tbody);
     }
 }

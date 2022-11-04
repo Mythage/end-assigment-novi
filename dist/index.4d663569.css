@@ -30,7 +30,7 @@ body {
   gap: 5px;
   font-family: poppins, sans-serif;
   font-size: 50px;
-  top: 150px;
+  top: 120px;
 }
 
 .header--title {
@@ -171,7 +171,6 @@ body {
 }
 
 .container__recipe-info {
-  outline: 2px solid red;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 2em;
@@ -181,6 +180,11 @@ body {
 .titel--styling h1 {
   margin-top: 2em;
   margin-bottom: 1em;
+}
+
+.recipe--img {
+  border: 3px solid #2f4f4f;
+  box-shadow: 5px 5px 10px gray;
 }
 
 .card--style {

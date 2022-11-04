@@ -8,8 +8,10 @@
     <script defer src="/src/functions/fetchDataCalculator.js" type="module"></script>
     <script defer src="/src/functions/retrieveProducts.js" type="module"></script>
     <script defer src="/src/functions/createProductList.js" type="module"></script>
+    <script defer src="/src/functions/addProductsToCalculator.js" type="module"></script>
 </head>
 <body>
+<!--    header with navbar-->
 <header>
     <div class="outer-container">
         <nav class="full-width navigator">
@@ -25,42 +27,52 @@
 <main class="outer-container">
     <div class="inner-container">
         <h1>Calorie Calculator</h1>
+<!--        this form contains the field and button for the input of a product-->
         <form id="calorieFrom">
             <label for="product-field">
                 <input type="text" id="product-field" placeholder="Barcode / product">
             </label>
-            <button type="submit" class="button button--submit">Search</button>
+            <button class="button button--submit">Search</button>
         </form>
+<!--        Tabel location for the generated list of products basted on the search results-->
         <table id="productTabelList">
             <thead>
-            <tr class="tabel--head">
+            <tr>
+                <th></th>
                 <th>Product</th>
                 <th>Quantity</th>
                 <th>Label</th>
             </tr>
             </thead>
+<!--            JS input for the product list-->
             <tbody id="tbody">
             </tbody>
         </table>
+        <!--        this form contains the field and button for the input of the amount of servings-->
         <form id="add-product-serving-to-list">
             <label for="amount-of-servings">Amount
-                <input type="text" id="amount-of-servings">
+                <input type="text" id="amount-of-servings" value="">
             </label>
             <label>Serving's</label>
-            <button type="submit" class="button button--submit">+ Add</button>
+            <button class="button button--submit" id="amount-of-servings-button">+ Add</button>
         </form>
+        <!--        Tabel location for the generated list of the selected products based on the tabel above results-->
         <table id="productListCalculator">
             <thead>
-            <tr class="tabel--head">
+            <tr>
                 <th>Product</th>
                 <th>Calories</th>
                 <th>Fat</th>
                 <th>Carbs</th>
             </tr>
             </thead>
+            <!--            JS input for the selected product list-->
             <tbody id="calculatorList">
             </tbody>
         </table>
+<!--        place to show the sum of all calories, fat and carbs-->
+        <span id="val"></span>
+        <span id="val1"></span>
     </div>
 </main>
 <footer class="outer-container footerStyling ">
