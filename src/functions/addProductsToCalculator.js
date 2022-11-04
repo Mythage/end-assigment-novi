@@ -1,6 +1,7 @@
 export function addProductsToCalculator(table, products, selector) {
     const filteredProducts = selector !== undefined ? products.filter(selector) : products
     console.log(products)
+    console.log(products.food.nutrients)
     const body = table.getElementsByTagName('tbody')[0]
     body.innerHTML = ""
     for (const product of filteredProducts){
@@ -15,20 +16,29 @@ export function addProductsToCalculator(table, products, selector) {
             }
         } else tdProduct.textContent = `${product.food.product}`
         //creating product Quantity.
-        const callories = document.createElement("td");
-        callories.textContent = `${Math.round(product.food.nutrients.ENERC_KCAL)}`
+        const calories = document.createElement("td");
+        calories.textContent = `${Math.round(product.food.nutrients.ENERC_KCAL)}`;
+        calories.setAttribute( 'value', `${Math.round(product.food.nutrients.ENERC_KCAL)}`);
+        calories.setAttribute('name', 'calories');
         //creating product measurement label.
         const fat = document.createElement("td");
-        fat.textContent = `${Math.round(product.food.nutrients.FAT)}`
+        fat.textContent = `${Math.round(product.food.nutrients.FAT) }`
+        fat.setAttribute( 'value', `${Math.round(product.food.nutrients.FAT)}`);
+        fat.setAttribute('name', 'fat');
 
         const carbs = document.createElement("td");
-        carbs.textContent = `${Math.round(product.food.nutrients.CHOCDF)}`
+        carbs.textContent = `${Math.round(product.food.nutrients.CHOCDF) }`
+        carbs.setAttribute( 'value', `${Math.round(product.food.nutrients.CHOCDF)}`);
+        carbs.setAttribute('name', 'carbs');
         // tdInput.appendChild(input)
         row.appendChild(tdProduct);
-        row.appendChild(carbs);
-        row.appendChild(callories);
+        row.appendChild(calories);
         row.appendChild(fat);
+        row.appendChild(carbs);
         body.appendChild(row);
         table.appendChild(body);
     }
+   // let calories = products.food.nutrients;
+   //     // [0].food.nutrients.ENERC_KCAL
+   //  console.log(calories)
 }

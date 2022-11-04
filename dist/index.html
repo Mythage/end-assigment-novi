@@ -22,8 +22,9 @@
             <section class="inner-container header-text">
                 <h1>Delicious Recipes.</h1>
                 <h2>Daily Updated.</h2>
-                <button class="button button--submit" type="button"><a>Find Recipes</a></button>
+                <button class="button button--submit" type="button"><a href="#test">Find Recipes</a></button>
             </section>
+<!--            the location where the random cards will be shown-->
             <section class="container__headerCards">
                 <article id="header-card-one" class="">
                     <a href="/pages/recipe-page.html">LOADING</a>
@@ -34,8 +35,9 @@
 </header>
 <main class="outer-container">
     <div class="full-width searchbar-nav">
+<!--        form to search for recipe based on non or several conditions-->
         <form id="recipeSearchForm" class="inner-container">
-            <div class="searchbar">
+            <div id="test" class="searchbar">
                 <label for="ingredients-field">
                     <input type="text" id="ingredients-field" placeholder="zoek op ingrediënten"><span></span>
                 </label>
@@ -97,7 +99,9 @@
             </div>
         </form>
     </div>
-    <ul class="" id="recipe-card-list"></ul>
+<!--    location ware all the Recipe-Cards will be displaced.-->
+    <ul id="recipe-card-list"></ul>
+<!--    span tag to display a error id needed-->
     <span id="error-message"></span>
 </main>
 <footer class="outer-container footerStyling ">

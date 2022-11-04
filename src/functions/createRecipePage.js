@@ -64,7 +64,6 @@ function ArrToList(i){
         healthLabel.textContent = item;
 
         const listHealthLabel = document.createElement('ul');
-        listHealthLabel.setAttribute('class', '')
         listHealthLabel.textContent = "";
 
         listHealthLabel.appendChild(healthLabel);
